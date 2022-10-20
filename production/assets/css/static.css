@@ -1,0 +1,209 @@
+@font-face {
+  font-family: "HelveticaUltraLight";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/assets/font/Helvetica/Helvetica-ultraLight.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaThin";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/assets/font/Helvetica/Helvetica-thin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaLight";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/assets/font/Helvetica/Helvetica-light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaRegular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/font/Helvetica/Helvetica-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaMedium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/font/Helvetica/Helvetica-medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/font/Helvetica/Helvetica-bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaHeavy";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/assets/font/Helvetica/Helvetica-heavy.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaBlack";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/font/Helvetica/Helvetica-black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "TimesBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/font/Times/Times-new-roman-bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Times";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/font/Times/Times-new-roman.woff2") format("woff2");
+}
+main {
+  padding: 0;
+}
+
+.static {
+  height: 100vh;
+  background-color: #fff;
+}
+.static.-error {
+  background-image: url("/assets/image/image-error.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.static .content-wrapper.-center {
+  justify-content: center;
+}
+.static__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+}
+.static__header .content-wrapper {
+  justify-content: center;
+}
+.static__header__logo {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.static__header__logo img {
+  width: 120px;
+  height: auto;
+}
+.static__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+  text-align: center;
+}
+.static__icon {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 20px 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid #E6EEF0;
+  background-color: #F0F6F8;
+}
+.static__icon svg {
+  width: auto;
+  height: 44px;
+}
+.static__text {
+  margin: 0;
+  color: #0A1F8F;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+}
+.static__error__title {
+  color: #fff;
+  font-size: 150px;
+  font-size: 9.375rem;
+  line-height: 150px;
+  line-height: 9.375rem;
+  font-weight: 700;
+  font-style: normal;
+}
+.static__error__text {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+  font-weight: 400;
+  font-style: normal;
+}
+.static__button {
+  margin: 20px 0 0 0;
+  width: 220px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #fff;
+  color: #0A1F8F;
+}
+.static__button:hover {
+  background-color: #0A1F8F;
+  color: #fff;
+}
+.static__button.-static {
+  background-color: #0A1F8F;
+  color: #fff;
+}
+.static__button.-static:hover {
+  background-color: #1C8CB7;
+}
+@media only screen and (min-width: 768px) {
+  .static__content.-static {
+    width: 220px;
+  }
+  .static__content.-error {
+    padding: 0;
+    width: 430px;
+  }
+  .static__button {
+    margin: 45px 0 0 0;
+  }
+  .static__button.-static {
+    margin: 25px 0 0 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .static__header {
+    height: 80px;
+  }
+  .static__header__logo img {
+    width: 169px;
+  }
+  .static__error__title {
+    margin: 0 0 20px 0;
+    font-size: 200px;
+    font-size: 12.5rem;
+    line-height: 200px;
+    line-height: 12.5rem;
+  }
+  .static__error__text {
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+  }
+}

@@ -1,0 +1,170 @@
+@import '../../assets/scss/_index';
+
+main{
+  padding: 0;
+}
+
+.static{
+	height: 100vh;
+
+	background-color: $white;
+
+  &.-error{
+    background-image: url('/assets/image/image-error.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .content-wrapper{
+    &.-center{
+      justify-content: center;
+    }
+  }
+
+	&__header{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+
+		width: 100%;
+		height: 60px;
+
+		background-color: $white;
+
+    @include mq(tablet-wide, min) {
+      height: 80px;
+    }
+
+    .content-wrapper{
+      justify-content: center;
+    }
+
+		&__logo{
+			flex-shrink: 0;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: flex-start;
+
+			img{
+				width: 120px;
+				height: auto;
+
+				@include mq(tablet-wide, min) {
+					width: 169px;
+				}
+			}
+		}
+	}
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: center;
+
+		width: 100%;
+
+    text-align: center;
+
+    @include mq(tablet, min) {
+      &.-static{
+        width: 220px;
+      }
+
+      &.-error{
+        padding: 0;
+        width: 430px;
+      }
+    }
+  }
+
+	&__icon{
+		flex-shrink: 0;
+		display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+		margin: 0 0 20px 0;
+		width: 120px;
+		height: 120px;
+
+		border-radius: 50%;
+		border: 1px solid $mystic-two;
+		background-color: $catskill-white;
+
+		svg{
+			width: auto;
+			height: 44px;
+		}
+	}
+
+  &__text{
+		margin: 0;
+		color: $ultramarine;
+    @include font-size(16,24);
+    letter-spacing: 0;
+  }
+
+  &__error{
+    &__title{
+      color: $white;
+      @include font-size(150,150);
+      font-weight: 700;
+      font-style: normal;
+
+      @include mq(tablet-wide, min) {
+				margin: 0 0 20px 0;
+        @include font-size(200,200);
+      }
+    }
+
+    &__text{
+			margin: 0;
+      color: $white;
+      @include font-size(18,26);
+      font-weight: 400;
+      font-style: normal;
+
+      @include mq(tablet-wide, min) {
+        @include font-size(18,24);
+      }
+    }
+  }
+
+	&__button{
+    margin: 20px 0 0 0;
+		width: 220px;
+		height: 50px;
+
+		border-radius: 25px;
+		background-color: $white;
+		color: $ultramarine;
+
+		@include mq(tablet, min) {
+      margin: 45px 0 0 0;
+		}
+
+		&:hover{
+			background-color: $ultramarine;
+			color: $white;
+		}
+
+		&.-static{
+			background-color: $ultramarine;
+			color: $white;
+
+			@include mq(tablet, min) {
+				margin: 25px 0 0 0;
+			}
+
+			&:hover{
+				background-color: $eastern-blue;
+			}
+		}
+	}
+}

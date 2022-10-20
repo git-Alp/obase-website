@@ -1,0 +1,26 @@
+{% set languageNav =  data.languages %}
+{% set language = "" %}
+{% for item in languageNav %}
+	{% set num = loop.index - 1 %}
+  {% if data.content.languageID == item.id %}
+    {% set language = item.cultureInfo %}
+  {% endif %}
+{% endfor %}
+
+<!DOCTYPE html>
+<html lang="{{ language }}">
+<head>
+	{% include "shared/_head.html" %}
+
+	<link rel="stylesheet" href="/assets/css/main.css?{{'' | date('unixTime')}}">
+
+	{% block css %}
+	{% endblock %}
+</head>
+<body>
+	<main>
+		{% block main %}
+		{% endblock %}
+	</main>
+</body>
+</html>

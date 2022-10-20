@@ -1,0 +1,48 @@
+// -- COLORS --
+$white:#fff;
+$black: #000;
+
+$outer-space: #383E41;
+$aqua-haze: #F6F9FA;
+$mystic: #EBF1F2;
+$mystic-two: #E6EEF0;
+$mystic-three: #DEE7E9;
+$mystic-four: #ECF1F3;
+$alto: #D9D9D9;
+$ultramarine: #0A1F8F;
+$eastern-blue: #1C8CB7;
+$abbey: #4E5456;
+$nevada: #696C6D;
+$nevada-two: #65696A;
+$nevada-three: #636D71;
+$edward: #9B9FA0;
+$catskill-white: #F0F6F8;
+$porcelain: #E8EEEF;
+$alabaster: #FAFAFA;
+$deep-cerulean: #0077B5;
+$seance: #8316B5;
+$tower-gray: #ADBDC2;
+$hit-gray: #98a8ac;
+$monza: #DC0606;
+$persian-blue: #1e38c5;
+$geyser: #dde3e5;
+
+$porcelain: #F2F5F6;
+$picton-blue: #48ABDF;
+$tuna: #3B3C3F;
+
+:root {
+	// 768
+	@include mq(tablet, min) {
+	}
+
+	// desktop
+	@include mq(tablet-wide, min) {
+	}
+
+	@include mq(desktop, min) {
+	}
+
+	@include mq(desktop-wide, min) {
+	}
+}

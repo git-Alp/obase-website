@@ -1,0 +1,32 @@
+version = 1.1
+
+[cache]
+	enabled = false
+	time = 10
+	folder = "../.cache"
+
+[archive]
+	folder = "../.archive"
+
+[node]
+	root = "../production"
+	folders = ['../production']
+
+[upload]
+	folder = "../uploads"
+	view = "/../.."
+
+[google]
+ recaptcha = ""
+
+[api]
+	service = "/webservice"
+[api.dotnet]
+	url = "http://api.alperen.fe.gricreative.com/api/cms/"
+	token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Im5vZGUtdXNlciIsIlVzZXJOYW1lIjoibm9kZS11c2VyIiwiVXNlcklEIjoiMiIsIm5hbWVpZCI6ImYyYWRkOTk0LTQ0M2UtNDM1Mi05NjM3LTJlN2QyNzRmYzVlZSIsImV4cCI6MTk4MTg5MzgxNSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1NTc4MS8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjU1NzgxLyJ9.hsMtLBBX6wR5QAcPftmA6DpYHy6ahCyCEUPPKBhjuAI"
+
+
+[cms]
+	folder = "../cms"
+	type = "dotnet"
+	url = "http://api.noas.gricreative.com/api/"

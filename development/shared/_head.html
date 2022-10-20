@@ -1,0 +1,33 @@
+{% set http = 'http://' %}
+{% set ssl = data.site.forceHttps %}
+{% if ssl == true %}
+{% set http = 'https://' %}
+{% endif %}
+
+{% set languageNav =  data.languages %}
+{% set reflect = data.page.meta[0].language %}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no">
+
+<meta name="description" content="{{ data.content.description if data.content.description != "" else "" }}">
+<link rel="canonical" href="{{http}}{{ data.site.url }}{{data.content.path}}" />
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
+
+<title>{{ data.content.metaTitle if data.content.metaTitle != "" else data.content.name }} | {{data.languagesTags | findTag('project-name', data.content.languageID)}}</title>
+<link rel="alternate icon" href="/favicon.ico" type="image/x-icon" />
+
+{% for item in languageNav %}
+	{% set num = loop.index - 1 %}
+	{% if reflect[num].url != "" %}
+		<link rel="alternate" href="{{http}}{{data.site.url}}{{ reflect[num].url }}" hreflang="{{ item.cultureInfo }}" />
+	{% endif %}
+{% endfor %}
+<link rel="alternate" href="{{http}}{{data.site.url}}{{ data.content.path }}" hreflang="x-default" />

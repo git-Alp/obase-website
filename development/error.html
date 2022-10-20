@@ -1,0 +1,9 @@
+{% extends "templates/_base-template-static.html" %}
+
+{% block css %}
+	<link rel="stylesheet" href="/assets/css/static.css?{{'' | date('unixTime')}}">
+{% endblock %}
+
+{% block main %}
+	{% include "pages/static/_error.html" %}
+{% endblock %}

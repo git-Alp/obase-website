@@ -1,0 +1,52 @@
+{% set languageNav =  data.languages %}
+{% set language = "" %}
+{% for item in languageNav %}
+	{% set num = loop.index - 1 %}
+  {% if data.content.languageID == item.id %}
+    {% set language = item.cultureInfo %}
+  {% endif %}
+{% endfor %}
+
+<!DOCTYPE html>
+<html lang="{{ language }}">
+<head>
+	{% include "shared/_head.html" %}
+
+	{% block cdncss %}
+	{% endblock %}
+
+	<link rel="stylesheet" href="/assets/css/main.css?{{'' | date('unixTime')}}">
+
+	{% block css %}
+	{% endblock %}
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js"></script>
+</head>
+
+<body>
+	{% include "shared/_header.html" %}
+
+	<main>
+		{% block main %}
+		{% endblock %}
+
+		<div class="back-to-top" back-to-top></div>
+	</main>
+
+	{% block sticky %}
+	{% endblock %}
+
+	{% include "shared/_footer.html" %}
+
+	{% block cdnscript %}
+	{% endblock %}
+
+	{% block formScript %}
+	{% endblock %}
+
+	<script src="/assets/script/main.js?{{'' | date('unixTime')}}"></script>
+
+	{% block script %}
+	{% endblock %}
+</body>
+</html>

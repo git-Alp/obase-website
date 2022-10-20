@@ -1,0 +1,22 @@
+<section class="static">
+	<!-- <div class="static__header">
+		<div class="content-wrapper">
+			<a href="{{data.languagesTags | findTag('home-link', data.content.languageID)}}" title="{{ data.languagesTags | findTag('project-name', data.content.languageID) }}" class="header__logo">
+				<img src="/assets/svg/logotype-color.svg" alt="{{ data.languagesTags | findTag('project-name', data.content.languageID) }}" width="169" height="42">
+			</a>
+		</div>
+	</div> -->
+
+	<div class="content-wrapper -center">
+		<div class="static__content -static">
+			<div class="static__icon">
+				<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M18.7249 22L0.678215 3.95329C-0.226105 3.04888 -0.226105 1.58262 0.678215 0.678303C1.58262 -0.226101 3.04897 -0.226101 3.95329 0.678303L22 18.725L40.0467 0.678303C40.9511 -0.226101 42.4174 -0.226101 43.3217 0.678303C44.226 1.58271 44.2261 3.04897 43.3217 3.95329L25.275 22L43.3217 40.0466C44.2261 40.951 44.2261 42.4173 43.3217 43.3216C42.4173 44.226 40.951 44.2259 40.0467 43.3216L22 25.2749L3.95346 43.3216C3.04905 44.226 1.58271 44.2259 0.678387 43.3216C-0.225929 42.4172 -0.225929 40.9509 0.678387 40.0466L18.7249 22Z" fill="#C71616"/>
+				</svg>
+			</div>
+
+			<p class="static__text">{{data.languagesTags | findTag('error-desc', data.content.languageID)}}</p>
+			<a href="{{data.languagesTags | findTag('home-link', data.content.languageID)}}" title="{{data.languagesTags | findTag('home-text', data.content.languageID)}}" class="static__button button-type -static">{{data.languagesTags | findTag('home-text', data.content.languageID)}}</a>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,10 @@
+{% extends "templates/_base-template.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/assets/css/standard-page.css?{{'' | date('unixTime')}}">
+{% endblock %}
+
+{% block main %}
+	{% include "shared/_page-header.html" %}
+	{% include "pages/standard-page/_standard-page.html" %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% set editor = data.contents | findContent('editor') | safe %}
+{% if editor and editor.length != "" and editor != "false" %}
+<section class="standard-page">
+  <div class="standard-page__content">
+    <div class="standard-page__editor -animation" lazy="-done" lazy-element>
+      {{ editor }}
+    </div>
+  </div>
+</section>
+{% endif %}

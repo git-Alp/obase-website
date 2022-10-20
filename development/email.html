@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Web Form</title>
+</head>
+
+<body style="padding:0; margin:0;">
+<table cellspacing="0" cellpadding="5" width="100%" bgcolor="#f3f1ed">
+ <tbody>
+   <tr>
+     <td></td>
+     <td width="560" style="padding-top:20px;">
+       <div style="max-width:560px;min-width:300px;margin:0 auto;">
+         <table cellspacing="1" cellpadding="0" width="100%" bgcolor="#e5e5e5" style="border-collapse:separate;">
+           <tbody>
+             <tr>
+               <td bgcolor="white">
+                 <table cellspacing="0" cellpadding="0" width="100%">
+                   <tbody>
+                     <tr>
+                       <td align="left" valign="middle"
+                         style="color: #000000; font-family: Arial; font-size:22px; padding: 20px 20px 20px 40px;">
+                         Web Form
+                       </td>
+                     </tr>
+                   </tbody>
+                 </table>
+               </td>
+             </tr>
+             <tr>
+               <td bgcolor="white" style="padding:25px;">
+                 {% set notFiles = r/^(?!files|g-recaptcha-response).*/g %}
+                 {% set onlyFiles = r/^files.*/g %}
+                 {% set onlyCaptcha = r/W*recaptcha.*/g %}
+                 <table cellspacing="15" cellpadding="0" width="100%">
+                 {# {{data|json}} #}
+                   {% for name, item in data.items %}
+                     {% if name != "g-recaptcha-response" %}
+                       <tr>
+                         {% if notFiles.test(name) %}
+                           <td style="color: #000000; font-family: Arial; font-size:14px; font-weight:bold; width: 30%; word-break: break-all;">{{name}}</td>
+                           <td style="color: #000000; font-family: Arial; font-size:14px; width: 70%; word-break: break-all;">: {{item}}</td>
+                         {% elseif name == 'files' %}
+                           {% else %}
+                           <td style="color: #000000; font-family: Arial; font-size:14px; font-weight:bold; width: 30%; word-break: break-all;">{{name}}</td>
+                           <td style="color: #000000; font-family: Arial; font-size:14px; width: 70%; word-break: break-all;">: {{item}}</td>
+                         {% endif %}
+                       </tr>
+                     {% endif %}
+                   {% endfor %}
+                 </table>
+               </td>
+             </tr>
+           </tbody>
+         </table>
+       </div>
+     </td>
+     <td></td>
+   </tr>
+   <tr>
+     <td></td>
+     <td>
+       <div style="max-width:560px;margin:0 auto;">
+         <table cellspacing="0" cellpadding="0" align="right"
+           style="font:12px/15px Arial,sans-serif;color:#999999;margin:0 0 20px 20px;">
+           <tbody>
+             <!-- <tr>
+             <td align="right">
+               <div>&copy; Fine&nbsp;Defender&nbsp;Pty&nbsp;Ltd ABN&nbsp;59&nbsp;603&nbsp;326&nbsp;969</div>
+             </td>
+           </tr> -->
+           </tbody>
+         </table>
+         <!-- <div style="font:12px/15px Arial,sans-serif;color:#999999;">
+         <div style="margin-bottom:1em;">This&nbsp;is&nbsp;an automatically&nbsp;generated&nbsp;mail,
+           please&nbsp;do&nbsp;not&nbsp;reply.</div>
+       </div> -->
+       </div>
+     </td>
+     <td></td>
+   </tr>
+ </tbody>
+  </table>
+</body>
+</html>

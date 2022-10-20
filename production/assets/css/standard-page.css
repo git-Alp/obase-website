@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "HelveticaUltraLight";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/assets/font/Helvetica/Helvetica-ultraLight.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaThin";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/assets/font/Helvetica/Helvetica-thin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaLight";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/assets/font/Helvetica/Helvetica-light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaRegular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/font/Helvetica/Helvetica-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaMedium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/font/Helvetica/Helvetica-medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/font/Helvetica/Helvetica-bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaHeavy";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/assets/font/Helvetica/Helvetica-heavy.woff2") format("woff2");
+}
+@font-face {
+  font-family: "HelveticaBlack";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/font/Helvetica/Helvetica-black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "TimesBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/font/Times/Times-new-roman-bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Times";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/font/Times/Times-new-roman.woff2") format("woff2");
+}
+.standard-page {
+  padding: 62px 24px 95px 24px;
+}
+.standard-page__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 744px;
+  width: 100%;
+}
+.standard-page__content h3 {
+  margin: 36px 0 0 0;
+}
+.standard-page__content h3:first-child {
+  margin-top: 0;
+}
+.standard-page__content p strong {
+  display: flex;
+  margin: 20px 0 -10px 0;
+}
+@media only screen and (max-width: 1023px) {
+  .standard-page__content p img {
+    margin: 0 0 12px -24px;
+    width: calc(100% + 48px);
+    max-width: initial;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .standard-page {
+    padding: 90px 0 110px 0;
+  }
+  .standard-page__content h3 {
+    margin: 35px 0 16px 0;
+  }
+  .standard-page__content p img {
+    margin: 15px 0 20px 0;
+  }
+  .standard-page__content ul {
+    margin: 0 0 15px 0;
+  }
+}

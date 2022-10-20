@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+	{% include "shared/_head-error.html" %}
+
+	<link rel="stylesheet" href="/assets/css/main.css?{{'' | date('unixTime')}}">
+
+	{% block css %}
+	{% endblock %}
+</head>
+<body>
+	<main>
+		{% block main %}
+		{% endblock %}
+	</main>
+</body>
+</html>

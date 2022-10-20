@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../gulp"
+		},
+		{
+			"path": "../node"
+		}
+	],
+	"settings": {
+		"editor.guides.bracketPairs": true
+	}
+}

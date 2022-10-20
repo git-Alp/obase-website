@@ -1,0 +1,8 @@
+@mixin text-cut($truncation-boundary) {
+	width: $truncation-boundary;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// @include text-cut(100px);

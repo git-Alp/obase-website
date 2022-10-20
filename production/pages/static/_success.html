@@ -1,0 +1,28 @@
+<section class="static">
+	<!-- <div class="static__header">
+		<div class="content-wrapper">
+			<a href="{{data.languagesTags | findTag('home-link', data.content.languageID)}}" title="{{ data.languagesTags | findTag('project-name', data.content.languageID) }}" class="header__logo">
+				<img src="/assets/svg/logotype-color.svg" alt="{{ data.languagesTags | findTag('project-name', data.content.languageID) }}" width="169" height="42">
+			</a>
+		</div>
+	</div> -->
+
+	<div class="content-wrapper -center">
+		<div class="static__content -static">
+			<div class="static__icon">
+				<svg width="60" height="44" viewBox="0 0 60 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M59.1213 0.877476C57.9498 -0.292492 56.0504 -0.292492 54.8787 0.877476L18.9368 36.7684L5.12138 22.9726C3.94986 21.8027 2.05049 21.8028 0.878729 22.9726C-0.29291 24.1425 -0.29291 26.0391 0.878729 27.2091L16.8155 43.1229C17.9867 44.2928 19.8875 44.292 21.0582 43.1229L59.1213 5.11407C60.293 3.94422 60.2928 2.04744 59.1213 0.877476Z" fill="url(#paint0_linear_485_4513)"/>
+					<defs>
+						<linearGradient id="paint0_linear_485_4513" x1="-2.23517e-07" y1="22" x2="60" y2="22" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#0A1F8F"/>
+							<stop offset="1" stop-color="#1C8CB7"/>
+						</linearGradient>
+					</defs>
+				</svg>
+			</div>
+
+			<p class="static__text">{{data.languagesTags | findTag('success-desc', data.content.languageID)}}</p>
+			<a href="{{data.languagesTags | findTag('home-link', data.content.languageID)}}" title="{{data.languagesTags | findTag('home-text', data.content.languageID)}}" class="static__button button-type -static">{{data.languagesTags | findTag('home-text', data.content.languageID)}}</a>
+		</div>
+	</div>
+</section>

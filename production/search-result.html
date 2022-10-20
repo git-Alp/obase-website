@@ -1,0 +1,22 @@
+{% extends "templates/_base-template.html" %}
+
+{% block css %}
+	<link rel="stylesheet" href="/assets/css/search-result.css?{{'' | date('unixTime')}}">
+{% endblock %}
+
+{% block main %}
+	{% include "shared/_page-header.html" %}
+	{% include "pages/search-result/_search.html" %}
+{% endblock %}
+
+{% block formScript %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+{% endblock %}
+
+{% block script %}
+	<script>
+		var baseUrl = "{{'https://' if forceHttps == true else 'http://'}}{{data.site.url}}"
+	</script>
+
+	<script src="/assets/script/search-result.js?{{'' | date('unixTime')}}"></script>
+{% endblock %}
