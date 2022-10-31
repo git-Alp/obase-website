@@ -1,0 +1,8 @@
+<mark class="reach-us" reach-us>
+  <div class="reach-us__container">
+    <h3 class="reach-us__content">{{ data.languagesTags | findTag('reach-us-text', data.content.languageID) }}</h3>
+    <a href="/" class="reach-us__button button-type" title="{{ data.languagesTags | findTag('reach-us-button', data.content.languageID) }}">
+      {{ data.languagesTags | findTag('reach-us-button', data.content.languageID) }}
+    </a>
+  </div>
+</mark>

@@ -29,4 +29,4 @@ version = 1.1
 [cms]
 	folder = "../cms"
 	type = "dotnet"
-	url = "http://api.noas.gricreative.com/api/"
+	url = "http://cms.alperen.fe.gricreative.com"

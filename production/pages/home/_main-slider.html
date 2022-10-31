@@ -1,0 +1,39 @@
+{% set sliderSubPage = data.contents | findContent('slider-sub-page','result') %}
+{% if sliderSubPage and sliderSubPage.length != "" and sliderSubPage != "false" %}
+<section class="main-slider" main-slider>
+  <div class="swiper slider">
+    <div class="swiper-wrapper">
+      {% for item in sliderSubPage %}
+      {% set item = item[0] %}
+
+      {% set slideImage = item.contents | findContent('slide-image') %}
+      {% set slideTitle = item.contents | findContent('slide-title') %}
+      {% set slideText = item.contents | findContent('slide-text') %}
+      {% set slideLink = item.contents | findContent('slide-link') %}
+      {% set isGradient = item.contents | findContent('gradient-checkbox') | checkboxArray() %}
+
+      {% set buttonText = data.languagesTags | findTag('about-text', data.content.languageID) %}
+
+      <div class="slider__item swiper-slide {{'-gradient-bgc' if isGradient}}">
+        <div class="slider__bg" lazy="{{ slideImage }}" lazy-bg></div>
+        <div class="slider__content">
+          <h2 class="slider__title">{{slideTitle}}</h2>
+          <p class="slider__text">{{slideText}}</p>
+          <a href="{{ slideLink }}" class="slider__button button-type" title="{{ buttonText }}">
+            {{ buttonText }}
+          </a>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+    {% if sliderSubPage.length > 1 %}
+    <div class="swiper-button swiper-button-next"></div>
+    <div class="swiper-button swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+    {% endif %}
+  </div>
+
+</section>
+
+{% endif %}

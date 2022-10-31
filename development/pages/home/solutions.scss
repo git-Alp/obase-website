@@ -1,0 +1,111 @@
+@import '../../assets/scss/_index';
+
+.solutions {
+  $solutions: &;
+  width: 100%;
+
+  &__container {
+    display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: stretch;
+
+		width: 100%;
+  }
+
+  &__item {
+    display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: stretch;
+
+		width: calc(100% / 3);
+
+    &:first-child {
+			#{$solutions}__wrapper {
+				background: linear-gradient(90deg, #610688 0%, #9F4896 100%);
+			}
+
+			&:hover{
+				#{$solutions}__image{
+					opacity: .5;
+				}
+			}
+		}
+
+		&:nth-child(2) {
+			#{$solutions}__wrapper {
+				background: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%);
+			}
+
+			&:hover{
+				#{$solutions}__image {
+					opacity: .5;
+				}
+			}
+		}
+
+		&:last-child{
+			#{$solutions}__wrapper {
+				background: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%);
+			}
+
+			&:hover{
+				#{$solutions}__image {
+					opacity: .5;
+				}
+			}
+		}
+  }
+
+  &__image {
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 60px 40px;
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 15px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    color: $white;
+    letter-spacing: .3px;
+    font-family: $GeomanistBold;
+    font-weight: 700;
+    @include font-size(20, 20);
+  }
+
+  &__text {
+    color: $white;
+    font-family: $GeomanistLight;
+    font-weight: 300;
+    @include font-size(20, 26);
+  }
+
+  &__link {
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

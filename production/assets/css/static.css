@@ -1,62 +1,56 @@
 @font-face {
-  font-family: "HelveticaUltraLight";
+  font-family: "GeomanistThin";
   font-style: normal;
   font-weight: 100;
-  src: url("/assets/font/Helvetica/Helvetica-ultraLight.woff2") format("woff2");
+  src: url("/assets/font/Geomanist-Thin.woff2") format("woff2");
 }
 @font-face {
-  font-family: "HelveticaThin";
+  font-family: "GeomanistExtraLight";
   font-style: normal;
   font-weight: 200;
-  src: url("/assets/font/Helvetica/Helvetica-thin.woff2") format("woff2");
+  src: url("/assets/font/Geomanist-ExtraLight.woff2") format("woff2");
 }
 @font-face {
-  font-family: "HelveticaLight";
+  font-family: "GeomanistLight";
   font-style: normal;
   font-weight: 300;
-  src: url("/assets/font/Helvetica/Helvetica-light.woff2") format("woff2");
+  src: url("/assets/font/Geomanist-Light.woff2") format("woff2");
 }
 @font-face {
-  font-family: "HelveticaRegular";
+  font-family: "GeomanistRegular";
   font-style: normal;
   font-weight: 400;
-  src: url("/assets/font/Helvetica/Helvetica-regular.woff2") format("woff2");
+  src: url("/assets/font/Geomanist-Regular.woff2") format("woff2");
 }
 @font-face {
-  font-family: "HelveticaMedium";
+  font-family: "GeomanistMedium";
   font-style: normal;
   font-weight: 500;
-  src: url("/assets/font/Helvetica/Helvetica-medium.woff2") format("woff2");
+  src: url("/assets/font/Geomanist-Medium.woff2") format("woff2");
 }
 @font-face {
-  font-family: "HelveticaBold";
+  font-family: "GeomanistBook";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/font/Geomanist-Book.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistBold";
   font-style: normal;
   font-weight: 700;
-  src: url("/assets/font/Helvetica/Helvetica-bold.woff2") format("woff2");
+  src: url("/assets/font/Geomanist-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "HelveticaHeavy";
+  font-family: "GeomanistBlack";
   font-style: normal;
   font-weight: 800;
-  src: url("/assets/font/Helvetica/Helvetica-heavy.woff2") format("woff2");
+  src: url("/assets/font/Geomanist-Black.woff2") format("woff2");
 }
 @font-face {
-  font-family: "HelveticaBlack";
+  font-family: "GeomanistUltra";
   font-style: normal;
   font-weight: 900;
-  src: url("/assets/font/Helvetica/Helvetica-black.woff2") format("woff2");
-}
-@font-face {
-  font-family: "TimesBold";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/assets/font/Times/Times-new-roman-bold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Times";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/assets/font/Times/Times-new-roman.woff2") format("woff2");
+  src: url("/assets/font/Geomanist-Ultra.woff2") format("woff2");
 }
 main {
   padding: 0;

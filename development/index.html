@@ -1,15 +1,18 @@
 {% extends "templates/_base-template.html" %}
 
 {% block cdncss %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.min.css">
 {% endblock %}
 
 {% block css %}
-
+	<link rel="stylesheet" href="/assets/css/home.css?{{'' | date('unixTime')}}">
 {% endblock %}
 
 {% block main %}
-	{% include "pages/home/_init.html" %}
+	{% include "pages/home/_main-slider.html" %}
+	{% include "shared/components/_reach-us.html" %}
+	{% include "pages/home/_sectors.html" %}
+	{% include "pages/home/_solutions.html" %}
 {% endblock %}
 
 {% block sticky %}
@@ -21,6 +24,6 @@
 {% endblock %}
 
 {% block script %}
-
+	<script src="/assets/script/home.js?{{'' | date('unixTime')}}"></script>
 {% endblock %}
 

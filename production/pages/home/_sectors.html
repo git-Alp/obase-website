@@ -1,0 +1,33 @@
+<section class="sectors" sectors>
+
+  {% set sectorsSubPage = data.contents | findContent('sectors-sub-page','result') %}
+  {% if sectorsSubPage and sectorsSubPage.length != "" and sectorsSubPage != "false" %}
+  
+  <div class="sectors__container">
+    {% for item in sectorsSubPage %}
+    {% set item = item[0] %}
+
+    {% set sectorIcon = item.contents | findContent('sector-icon') %}
+    {% set sectorText = item.contents | findContent('sector-text') %}
+
+    {% if loop.index < 4 %}
+      <div class="sectors__item">
+        <div class="sectors__icon">
+          <img src="{{sectorIcon}}" width="100" height="100" alt="{{item.name}}">
+        </div>
+        <div class="sectors__title">{{item.name}}</div>
+        <div class="sectors__text">{{sectorText}}</div>
+        <a class="sectors__detail-link">
+          <span>{{ data.languagesTags | findTag('detail-information-text', data.content.languageID) }}</span>
+          <img src="/assets/svg/blue-arrow-icon.svg" alt="Detail Information">
+        </a>
+      </div>
+    {% endif %}
+    {% endfor %}
+    
+  </div>
+  {% endif %}
+  <div class="sectors-all">
+    <a href="/" class="sectors-all__link">{{ data.languagesTags | findTag('all-sectors-button', data.content.languageID) }}</a>
+  </div>
+</section>

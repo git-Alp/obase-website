@@ -11,6 +11,8 @@
 		}
 	],
 	"settings": {
-		"editor.guides.bracketPairs": true
+		"files.associations": {
+			// "*.html": "njk",
+		}
 	}
 }

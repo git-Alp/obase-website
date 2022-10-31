@@ -13,26 +13,22 @@
 	}
 }
 
-@include font-face("HelveticaUltraLight", "/assets/font/Helvetica/Helvetica-ultraLight", 100, normal, woff2);
-@include font-face("HelveticaThin", "/assets/font/Helvetica/Helvetica-thin", 200, normal, woff2);
-@include font-face("HelveticaLight", "/assets/font/Helvetica/Helvetica-light", 300, normal, woff2);
-@include font-face("HelveticaRegular", "/assets/font/Helvetica/Helvetica-regular", 400, normal, woff2);
-@include font-face("HelveticaMedium", "/assets/font/Helvetica/Helvetica-medium", 500, normal, woff2);
-@include font-face("HelveticaBold", "/assets/font/Helvetica/Helvetica-bold", 700, normal, woff2);
-@include font-face("HelveticaHeavy", "/assets/font/Helvetica/Helvetica-heavy", 800, normal, woff2);
-@include font-face("HelveticaBlack", "/assets/font/Helvetica/Helvetica-black", 900, normal, woff2);
+@include font-face("GeomanistThin", "/assets/font/Geomanist-Thin", 100, normal, woff2);
+@include font-face("GeomanistExtraLight", "/assets/font/Geomanist-ExtraLight", 200, normal, woff2);
+@include font-face("GeomanistLight", "/assets/font/Geomanist-Light", 300, normal, woff2);
+@include font-face("GeomanistRegular", "/assets/font/Geomanist-Regular", 400, normal, woff2);
+@include font-face("GeomanistMedium", "/assets/font/Geomanist-Medium", 500, normal, woff2);
+@include font-face("GeomanistBook", "/assets/font/Geomanist-Book", 600, normal, woff2);
+@include font-face("GeomanistBold", "/assets/font/Geomanist-Bold", 700, normal, woff2);
+@include font-face("GeomanistBlack", "/assets/font/Geomanist-Black", 800, normal, woff2);
+@include font-face("GeomanistUltra", "/assets/font/Geomanist-Ultra", 900, normal, woff2);
 
-@include font-face("TimesBold", "/assets/font/Times/Times-new-roman-bold", 700, normal, woff2);
-@include font-face("Times", "/assets/font/Times/Times-new-roman", 400, normal, woff2);
-
-$HelveticaUltraLight: "HelveticaUltraLight";
-$HelveticaThin: "HelveticaThin";
-$HelveticaLight: "HelveticaLight";
-$HelveticaRegular: "HelveticaRegular";
-$HelveticaMedium: "HelveticaMedium";
-$HelveticaBold: "HelveticaBold";
-$HelveticaHeavy: "HelveticaHeavy";
-$HelveticaBlack: "HelveticaBlack";
-
-$TimesBold: "TimesBold";
-$Times: "Times";
+$GeomanistThin: "GeomanistThin";
+$GeomanistExtraLight: "GeomanistExtraLight";
+$GeomanistLight: "GeomanistLight";
+$GeomanistRegular: "GeomanistRegular";
+$GeomanistMedium: "GeomanistMedium";
+$GeomanistBook: "GeomanistBook";
+$GeomanistBold: "GeomanistBold";
+$GeomanistBlack: "GeomanistBlack";
+$GeomanistUltra: "GeomanistUltra";

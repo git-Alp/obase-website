@@ -1,0 +1,467 @@
+@font-face {
+  font-family: "GeomanistThin";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/assets/font/Geomanist-Thin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistExtraLight";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/assets/font/Geomanist-ExtraLight.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistLight";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/assets/font/Geomanist-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistRegular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/font/Geomanist-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistMedium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/font/Geomanist-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistBook";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/font/Geomanist-Book.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/font/Geomanist-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistBlack";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/assets/font/Geomanist-Black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistUltra";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/font/Geomanist-Ultra.woff2") format("woff2");
+}
+.main-slider {
+  position: relative;
+  height: calc(100vh - 60px);
+  background-color: #5FA5D9;
+}
+.main-slider .slider {
+  width: 100%;
+  height: 100%;
+}
+.main-slider .slider__item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 40px 0 40px;
+}
+.main-slider .slider__item.-gradient-bgc {
+  background: linear-gradient(90deg, #223962 0%, #48ABDF 65.62%, #80D3FF 100%);
+}
+.main-slider .slider__content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 500px;
+  margin-left: 120px;
+}
+.main-slider .slider__bg {
+  z-index: 0;
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: 100%;
+  height: 94%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 94% center;
+}
+.main-slider .slider__title {
+  margin-bottom: 10px;
+  color: #fff;
+  font-family: "GeomanistLight";
+  font-weight: 300;
+  font-size: 60px;
+  font-size: 3.75rem;
+  line-height: 70px;
+  line-height: 4.375rem;
+}
+.main-slider .slider__text {
+  color: #fff;
+  font-family: "GeomanistExtraLight";
+  font-weight: 300;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 32px;
+  line-height: 2rem;
+}
+.main-slider .slider__button {
+  margin-top: 40px;
+  padding: 25px 50px 20px 50px;
+  background-color: #fff;
+  color: #223963;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 15px;
+  line-height: 0.9375rem;
+}
+.main-slider .swiper-button {
+  margin: 0 50px;
+  width: 32px;
+  height: 32px;
+  color: #fff;
+}
+.main-slider .swiper-button::after {
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 32px;
+  line-height: 2rem;
+}
+.main-slider .swiper-pagination-bullet {
+  opacity: 1;
+  margin: -1px !important;
+  width: 16px;
+  height: 16px;
+  background-color: #2F6BAB;
+  border: 2px solid #FFFFFF;
+}
+.main-slider .swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+@media only screen and (min-width: 1024px) {
+  .main-slider {
+    height: calc(100vh - 260px);
+  }
+}
+@font-face {
+  font-family: "GeomanistThin";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/assets/font/Geomanist-Thin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistExtraLight";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/assets/font/Geomanist-ExtraLight.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistLight";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/assets/font/Geomanist-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistRegular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/font/Geomanist-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistMedium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/font/Geomanist-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistBook";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/font/Geomanist-Book.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/font/Geomanist-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistBlack";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/assets/font/Geomanist-Black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistUltra";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/font/Geomanist-Ultra.woff2") format("woff2");
+}
+.reach-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.reach-us__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #EBF1F3;
+}
+.reach-us__content {
+  margin: 0;
+  color: #3B3C3F;
+  font-family: "GeomanistLight";
+  font-weight: 300;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+}
+.reach-us__button {
+  margin: 20px 30px;
+  padding: 16px 40px 13px 40px;
+  color: #fff;
+  background: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%);
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 13px;
+  line-height: 0.8125rem;
+}
+
+.sectors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.sectors__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  width: 100%;
+  background-color: #fff;
+}
+.sectors__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 40px 50px;
+  max-width: 350px;
+}
+.sectors__item:first-child {
+  border-right: 1px solid #EBF1F3;
+}
+.sectors__item:last-child {
+  border-left: 1px solid #EBF1F3;
+}
+.sectors__icon {
+  margin-bottom: 50px;
+  width: 100px;
+  height: 100px;
+}
+.sectors__title {
+  margin-bottom: 10px;
+  color: #3B3C3F;
+  letter-spacing: 0.3px;
+  font-family: "GeomanistBold";
+  font-weight: 700;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+}
+.sectors__text {
+  margin-bottom: 50px;
+  color: #636364;
+  font-family: "GeomanistLight";
+  font-weight: 300;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+}
+.sectors__detail-link {
+  cursor: pointer;
+}
+.sectors__detail-link span {
+  margin-right: 10px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: #48ABDF;
+  font-family: "GeomanistBold";
+  font-weight: 700;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1rem;
+}
+.sectors-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #fff;
+}
+.sectors-all__link {
+  margin: 0 0 60px 0;
+  color: #3B3C3F;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-family: "GeomanistBold";
+  font-weight: 700;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1rem;
+}
+@font-face {
+  font-family: "GeomanistThin";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/assets/font/Geomanist-Thin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistExtraLight";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/assets/font/Geomanist-ExtraLight.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistLight";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/assets/font/Geomanist-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistRegular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/font/Geomanist-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistMedium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/font/Geomanist-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistBook";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/font/Geomanist-Book.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/font/Geomanist-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistBlack";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/assets/font/Geomanist-Black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GeomanistUltra";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/font/Geomanist-Ultra.woff2") format("woff2");
+}
+.solutions {
+  width: 100%;
+}
+.solutions__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+}
+.solutions__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 33.3333333333%;
+}
+.solutions__item:first-child .solutions__wrapper {
+  background: linear-gradient(90deg, #610688 0%, #9F4896 100%);
+}
+.solutions__item:first-child:hover .solutions__image {
+  opacity: 0.5;
+}
+.solutions__item:nth-child(2) .solutions__wrapper {
+  background: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%);
+}
+.solutions__item:nth-child(2):hover .solutions__image {
+  opacity: 0.5;
+}
+.solutions__item:last-child .solutions__wrapper {
+  background: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%);
+}
+.solutions__item:last-child:hover .solutions__image {
+  opacity: 0.5;
+}
+.solutions__image {
+  width: 100%;
+}
+.solutions__image img {
+  display: block;
+  width: 100%;
+}
+.solutions__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 60px 40px;
+  width: 100%;
+}
+.solutions__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-right: 15px;
+}
+.solutions__title {
+  margin-bottom: 10px;
+  color: #fff;
+  letter-spacing: 0.3px;
+  font-family: "GeomanistBold";
+  font-weight: 700;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 20px;
+  line-height: 1.25rem;
+}
+.solutions__text {
+  color: #fff;
+  font-family: "GeomanistLight";
+  font-weight: 300;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+}
+.solutions__link img {
+  width: 50px;
+  height: 50px;
+}

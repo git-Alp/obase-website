@@ -1,0 +1,96 @@
+@import '../../assets/scss/_index';
+@import '../../assets/scss/components/_reach-us';
+
+.sectors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $white;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    width: 100%;
+    background-color: $white;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px 50px;
+    max-width: 350px;
+
+    &:first-child {
+      border-right: 1px solid $mystic;
+    }
+
+    &:last-child {
+      border-left: 1px solid $mystic;
+    }
+  }
+
+
+  &__icon {
+    margin-bottom: 50px;
+    width: 100px;
+    height: 100px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    color: $tuna;
+    letter-spacing: .3px;
+    font-family: $GeomanistBold;
+    font-weight: 700;
+    @include font-size(20, 26);
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    color: $mid-gray;
+    font-family: $GeomanistLight;
+    font-weight: 300;
+    @include font-size(20, 26);
+  }
+
+  &__detail-link {
+    cursor: pointer;
+
+    span {
+      margin-right: 10px;
+      text-transform: uppercase;
+      text-decoration: underline;
+      color: $picton-blue;
+      font-family: $GeomanistBold;
+      font-weight: 700;
+      @include font-size(16, 16);  
+    }
+  }
+
+  &-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: $white;
+
+    &__link {
+      margin: 0 0 60px 0;
+      color: $tuna;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: underline;
+
+      font-family: $GeomanistBold;
+      font-weight: 700;
+      @include font-size(16, 16);
+    }
+  }
+}
