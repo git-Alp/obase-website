@@ -68,7 +68,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: #F2F5F6;
+  background-color: #E7EBED;
 }
 .header-top__container {
   display: flex;
@@ -412,6 +412,25 @@ section {
   justify-content: flex-start;
   align-items: center;
   max-width: 100%;
+}
+
+.all-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.all-link {
+  color: #3B3C3F;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-family: "GeomanistBold";
+  font-weight: 700;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1rem;
 }
 
 .content-wrapper {

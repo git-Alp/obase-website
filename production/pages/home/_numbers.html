@@ -1,0 +1,49 @@
+{% set numbersSubPage = data.contents | findContent('numbers-sub-page','result') %}
+{% if numbersSubPage and numbersSubPage.length != "" and numbersSubPage != "false" %}
+{% set numbersText = data.languagesTags | findTag('numbers-text', data.content.languageID) %}
+
+{% for item in numbersSubPage %}
+{% set item = item[0] %}
+{% if item.name == numbersText %}
+  <section class="numbers" numbers>
+    <div class="numbers__container">
+
+      {% set countryText = data.languagesTags | findTag('country-text', data.content.languageID) %}
+      {% set projectText = data.languagesTags | findTag('project-text', data.content.languageID) %}
+      {% set experienceText = data.languagesTags | findTag('experience-text', data.content.languageID) %}
+      {% set specialistText = data.languagesTags | findTag('specialist-text', data.content.languageID) %}
+
+      {% set country = item.contents | findContent('country') %}
+      {% set project = item.contents | findContent('project') %}
+      {% set experience = item.contents | findContent('experience') %}
+      {% set specialist = item.contents | findContent('specialist') %}
+
+      {% if country and country.length != "" and country != "false" %}
+      <div class="numbers__item">
+        <div class="numbers__val">{{country}}</div>
+        <div class="numbers__key">{{countryText}}</div>
+      </div>
+      {% endif %}
+      {% if project and project.length != "" and project != "false" %}
+      <div class="numbers__item">
+        <div class="numbers__val">{{project}}</div>
+        <div class="numbers__key">{{projectText}}</div>
+      </div>
+      {% endif %}
+      {% if experience and experience.length != "" and experience != "false" %}
+      <div class="numbers__item">
+        <div class="numbers__val">{{experience}}</div>
+        <div class="numbers__key">{{experienceText}}</div>
+      </div>
+      {% endif %}
+      {% if specialist and specialist.length != "" and specialist != "false" %}
+      <div class="numbers__item">
+        <div class="numbers__val">{{specialist}}</div>
+        <div class="numbers__key">{{specialistText}}</div>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+{% endfor %}
+{% endif %}

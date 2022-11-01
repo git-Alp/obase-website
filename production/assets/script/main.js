@@ -225,5 +225,3 @@ let initMap = () => {
 // };
 // initColors();
 "use strict";
-
-console.log("heyo");

@@ -1,0 +1,36 @@
+{% set partnersSliderSub = data.contents | findContent('partners-slider-sub','result') %}
+{% if partnersSliderSub and partnersSliderSub.length != "" and partnersSliderSub != "false" %}
+{% set sliderText = data.languagesTags | findTag('slider-text', data.content.languageID) %}
+
+{% for item in partnersSliderSub %}
+  {% set item = item[0] %}
+  {% if item.name == sliderText %}
+    <section class="partners-slider" partners-slider>
+      <div class="slider swiper">
+        <div class="swiper-wrapper">
+          
+          {% set gallery = item.contents | findContent('image-gallery', 'result') %}
+          {% if gallery and gallery.length != "" and gallery != "false" %}
+          {% for image in gallery %}
+            <div class="partners-slider__item swiper-slide">
+              <div class="partners-slider__image">
+                <img src="/uploads/image/{{ image.imageName }}" alt="{{ image.altText }}">
+              </div>
+            </div>
+          {% endfor %}
+          {% endif %}
+          
+        </div>
+
+        <div class="swiper-button swiper-button-next"></div>
+        <div class="swiper-button swiper-button-prev"></div>
+      </div>
+
+      <div class="all-container">
+        <a href="/" class="all-link">{{ data.languagesTags | findTag('all-partners-button', data.content.languageID) }}</a>
+      </div>
+    </section>
+  {% endif %}
+{% endfor%}
+
+{% endif %}

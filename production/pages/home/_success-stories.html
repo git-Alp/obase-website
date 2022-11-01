@@ -1,0 +1,41 @@
+{% set successStoriesSubPage = data.contents | findContent('success-stories-sub-page','result') %}
+{% if successStoriesSubPage and successStoriesSubPage.length != "" and successStoriesSubPage != "false" %}
+
+<section class="success-stories" success-stories>
+  <div class="success-stories__container">
+
+    {% for item in successStoriesSubPage %}
+      {% set item = item[0] %}
+
+      {% set companyName = item.contents | findContent('company-name') %}
+      {% set headline = item.contents | findContent('headline') %}
+      {% set editor = item.contents | findContent('text-editor') | safe %}
+      {% set authorImage = item.contents | findContent('author-image') %}
+      {% set authorTitle = item.contents | findContent('author-title') %}
+      {% set imageDefault = "/assets/svg/author-icon.svg" %}
+
+      {% if loop.index < 4 %}
+      <div class="success-stories__card">
+        <div class="success-stories__company">{{companyName}}</div>
+        <div class="success-stories__headline">{{headline}}</div>
+        <div class="success-stories__text">{{editor}}</div>
+        <div class="success-stories__bottom-wrapper">
+          <div class="success-stories__image">
+            <img class="{{'-padding' if authorImage == false else ''}}" src="{{authorImage if authorImage != false else imageDefault}}" alt="{{item.name}}">
+          </div>
+          <div class="success-stories__author-wrapper">
+            <div class="success-stories__author-name">{{item.name}}</div>
+            <div class="success-stories__author-title">{{authorTitle}}</div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="success-stories-all all-container">
+    <a href="/" class="success-stories-all__link all-link">{{ data.languagesTags | findTag('all-success-stories-button', data.content.languageID) }}</a>
+  </div>
+</section>
+
+{% endif %}

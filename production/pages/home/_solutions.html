@@ -1,7 +1,7 @@
-<section class="solutions" solutions>
+{% set solutionsSubPage = data.contents | findContent('solutions-sub-page','result') %}
+{% if solutionsSubPage and solutionsSubPage.length != "" and solutionsSubPage != "false" %}
 
-  {% set solutionsSubPage = data.contents | findContent('solutions-sub-page','result') %}
-  {% if solutionsSubPage and solutionsSubPage.length != "" and solutionsSubPage != "false" %}
+<section class="solutions" solutions>
   
   <div class="solutions__container">
     {% for item in solutionsSubPage %}
@@ -29,8 +29,11 @@
     {% endfor %}
     
   </div>
-  {% endif %}
 
-    <a href="/" class="solutions-all__link">{{ data.languagesTags | findTag('all-solutions-button', data.content.languageID) }}</a>
+  <div class="solutions-all">
+    <a href="/" class="solutions-all__link button-type">{{ data.languagesTags | findTag('all-solutions-button', data.content.languageID) }}</a>
+  </div>
 
 </section>
+
+{% endif %}

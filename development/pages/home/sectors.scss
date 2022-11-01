@@ -1,5 +1,6 @@
 @import '../../assets/scss/_index';
 @import '../../assets/scss/components/_reach-us';
+@import '../../assets/scss/components/_technology-background';
 
 .sectors {
   display: flex;
@@ -75,22 +76,8 @@
   }
 
   &-all {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: $white;
-
     &__link {
       margin: 0 0 60px 0;
-      color: $tuna;
-      text-align: center;
-      text-transform: uppercase;
-      text-decoration: underline;
-
-      font-family: $GeomanistBold;
-      font-weight: 700;
-      @include font-size(16, 16);
     }
   }
 }

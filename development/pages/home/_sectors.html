@@ -1,7 +1,6 @@
+{% set sectorsSubPage = data.contents | findContent('sectors-sub-page','result') %}
+{% if sectorsSubPage and sectorsSubPage.length != "" and sectorsSubPage != "false" %}
 <section class="sectors" sectors>
-
-  {% set sectorsSubPage = data.contents | findContent('sectors-sub-page','result') %}
-  {% if sectorsSubPage and sectorsSubPage.length != "" and sectorsSubPage != "false" %}
   
   <div class="sectors__container">
     {% for item in sectorsSubPage %}
@@ -26,8 +25,10 @@
     {% endfor %}
     
   </div>
-  {% endif %}
-  <div class="sectors-all">
-    <a href="/" class="sectors-all__link">{{ data.languagesTags | findTag('all-sectors-button', data.content.languageID) }}</a>
+
+  <div class="sectors-all all-container">
+    <a href="/" class="sectors-all__link all-link">{{ data.languagesTags | findTag('all-sectors-button', data.content.languageID) }}</a>
   </div>
 </section>
+
+{% endif %}

@@ -1,0 +1,36 @@
+{% set customersSliderSub = data.contents | findContent('customers-slider-sub','result') %}
+{% if customersSliderSub and customersSliderSub.length != "" and customersSliderSub != "false" %}
+{% set sliderText = data.languagesTags | findTag('slider-text', data.content.languageID) %}
+
+{% for item in customersSliderSub %}
+  {% set item = item[0] %}
+  {% if item.name == sliderText %}
+    <section class="customers-slider" customers-slider>
+      <div class="slider swiper">
+        <div class="swiper-wrapper">
+          
+          {% set gallery = item.contents | findContent('image-gallery', 'result') %}
+          {% if gallery and gallery.length != "" and gallery != "false" %}
+          {% for image in gallery %}
+            <div class="customers-slider__item swiper-slide">
+              <div class="customers-slider__image">
+                <img src="/uploads/image/{{ image.imageName }}" alt="{{ image.altText }}">
+              </div>
+            </div>
+          {% endfor %}
+          {% endif %}
+          
+        </div>
+
+        <div class="swiper-button swiper-button-next"></div>
+        <div class="swiper-button swiper-button-prev"></div>
+      </div>
+
+      <div class="all-container">
+        <a href="/" class="all-link">{{ data.languagesTags | findTag('all-customers-button', data.content.languageID) }}</a>
+      </div>
+    </section>
+  {% endif %}
+{% endfor%}
+
+{% endif %}
