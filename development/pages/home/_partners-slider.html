@@ -13,9 +13,9 @@
           {% if gallery and gallery.length != "" and gallery != "false" %}
           {% for image in gallery %}
             <div class="partners-slider__item swiper-slide">
-              <div class="partners-slider__image">
+              <a href="/" class="partners-slider__image">
                 <img src="/uploads/image/{{ image.imageName }}" alt="{{ image.altText }}">
-              </div>
+              </a>
             </div>
           {% endfor %}
           {% endif %}

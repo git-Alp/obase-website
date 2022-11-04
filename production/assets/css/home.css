@@ -57,7 +57,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px 60px 80px 60px;
+  padding: 50px 25px 70px 25px;
   height: 375px;
   width: 100%;
   background-color: #fff;
@@ -69,7 +69,7 @@
   object-fit: cover;
 }
 .customers-slider .swiper {
-  padding: 0 40px;
+  padding: 0 35px;
   margin-bottom: 20px;
   width: 100%;
   height: 100%;
@@ -91,6 +91,11 @@
   font-size: 2rem;
   line-height: 32px;
   line-height: 2rem;
+}
+@media only screen and (min-width: 1248px) {
+  .customers-slider {
+    padding: 50px 60px 70px 60px;
+  }
 }
 @font-face {
   font-family: "GeomanistThin";
@@ -146,6 +151,160 @@
   font-weight: 900;
   src: url("/assets/font/Geomanist-Ultra.woff2") format("woff2");
 }
+.advertisement {
+  z-index: 2;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: none;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  max-width: 425px;
+  min-height: 120px;
+  border-radius: 2px;
+  background-color: #fff;
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), left 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.advertisement__image {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 20px 0 0;
+  width: 100px;
+}
+.advertisement__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.advertisement__content p {
+  margin: 0;
+  color: #3B3C3F;
+  font-family: "GeomanistMedium";
+  font-weight: 500;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 28px;
+  line-height: 1.75rem;
+}
+.advertisement__content p:first-child {
+  margin-bottom: 5px;
+}
+.advertisement__content p a {
+  color: #48ABDF;
+  text-decoration: underline;
+  font-family: "GeomanistBold";
+  font-weight: 700;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 13px;
+  line-height: 0.8125rem;
+}
+.advertisement__close {
+  z-index: 1;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 5px;
+  cursor: pointer;
+}
+.advertisement.-hide {
+  transform: translateX(-100%);
+  left: 0;
+}
+
+.reach-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.reach-us__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #EBF1F3;
+}
+.reach-us__content {
+  margin: 0;
+  color: #3B3C3F;
+  font-family: "GeomanistLight";
+  font-weight: 300;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+}
+.reach-us__button {
+  margin: 20px 30px;
+  padding: 16px 40px 13px 40px;
+  color: #fff;
+  background: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%);
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 13px;
+  line-height: 0.8125rem;
+}
+.reach-us__button:hover {
+  background: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%);
+}
+
+.technology-background {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.technology-background__top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 25px;
+  width: 100%;
+  height: 310px;
+  background-color: #EBF1F3;
+}
+.technology-background__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%);
+}
+.technology-background__image {
+  position: relative;
+  bottom: 150px;
+  right: 25px;
+}
+.technology-background__title {
+  max-width: 300px;
+  color: #223963;
+  font-family: "GeomanistLight";
+  font-weight: 300;
+  font-size: 60px;
+  font-size: 3.75rem;
+  line-height: 70px;
+  line-height: 4.375rem;
+}
+.technology-background__title span {
+  color: #3277BC;
+  font-family: "GeomanistBold";
+  font-weight: 700;
+}
+
 .main-slider {
   position: relative;
   height: calc(100vh - 60px);
@@ -161,7 +320,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 40px 40px 0 40px;
+  padding: 40px 25px 0 25px;
 }
 .main-slider .slider__item.-gradient-bgc {
   background: linear-gradient(90deg, #223962 0%, #48ABDF 65.62%, #80D3FF 100%);
@@ -185,7 +344,7 @@
   height: 94%;
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: 94% center;
+  background-position: right center;
 }
 .main-slider .slider__title {
   margin-bottom: 10px;
@@ -216,8 +375,12 @@
   line-height: 15px;
   line-height: 0.9375rem;
 }
+.main-slider .slider__button:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%);
+}
 .main-slider .swiper-button {
-  margin: 0 50px;
+  margin: 0 10px;
   width: 32px;
   height: 32px;
   color: #fff;
@@ -240,8 +403,28 @@
   background-color: #fff;
 }
 @media only screen and (min-width: 1024px) {
+  .advertisement {
+    display: flex;
+  }
   .main-slider {
     height: calc(100vh - 260px);
+  }
+}
+@media only screen and (min-width: 1248px) {
+  .technology-background__top {
+    padding-left: 130px;
+  }
+  .technology-background__image {
+    right: 100px;
+  }
+  .main-slider .slider__item {
+    padding: 40px 40px 0 40px;
+  }
+  .main-slider .slider__bg {
+    background-position: 94% center;
+  }
+  .main-slider .swiper-button {
+    margin: 0 50px;
   }
 }
 @font-face {
@@ -303,7 +486,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 100px 220px 70px 220px;
+  padding: 100px 25px 70px 25px;
   width: 100%;
   background: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%);
 }
@@ -326,20 +509,37 @@
   color: #fff;
   font-family: "GeomanistBold";
   font-weight: 700;
-  font-size: 90px;
-  font-size: 5.625rem;
-  line-height: 90px;
-  line-height: 5.625rem;
+  font-size: 80px;
+  font-size: 5rem;
+  line-height: 80px;
+  line-height: 5rem;
 }
 .numbers__key {
   margin: 0;
   color: #FBB03B;
   font-family: "GeomanistBold";
   font-weight: 700;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 20px;
-  line-height: 1.25rem;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+}
+@media only screen and (min-width: 1248px) {
+  .numbers {
+    padding: 100px 220px 70px 220px;
+  }
+  .numbers__val {
+    font-size: 90px;
+    font-size: 5.625rem;
+    line-height: 90px;
+    line-height: 5.625rem;
+  }
+  .numbers__key {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 20px;
+    line-height: 1.25rem;
+  }
 }
 @font-face {
   font-family: "GeomanistThin";
@@ -400,7 +600,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 60px 80px 60px;
+  padding: 40px 25px 70px 25px;
   height: 350px;
   width: 100%;
   background-color: #fff;
@@ -412,7 +612,7 @@
   object-fit: cover;
 }
 .partners-slider .swiper {
-  padding: 0 40px;
+  padding: 0 35px;
   margin-bottom: 20px;
   width: 100%;
   height: 100%;
@@ -434,6 +634,11 @@
   font-size: 2rem;
   line-height: 32px;
   line-height: 2rem;
+}
+@media only screen and (min-width: 1248px) {
+  .partners-slider {
+    padding: 100px 60px 70px 60px;
+  }
 }
 @font-face {
   font-family: "GeomanistThin";
@@ -489,85 +694,6 @@
   font-weight: 900;
   src: url("/assets/font/Geomanist-Ultra.woff2") format("woff2");
 }
-.reach-us {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.reach-us__container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  background-color: #EBF1F3;
-}
-.reach-us__content {
-  margin: 0;
-  color: #3B3C3F;
-  font-family: "GeomanistLight";
-  font-weight: 300;
-  font-size: 18px;
-  font-size: 1.125rem;
-  line-height: 18px;
-  line-height: 1.125rem;
-}
-.reach-us__button {
-  margin: 20px 30px;
-  padding: 16px 40px 13px 40px;
-  color: #fff;
-  background: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%);
-  font-size: 13px;
-  font-size: 0.8125rem;
-  line-height: 13px;
-  line-height: 0.8125rem;
-}
-
-.technology-background {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.technology-background__top {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding-left: 130px;
-  width: 100%;
-  height: 310px;
-  background-color: #EBF1F3;
-}
-.technology-background__bottom {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-  height: 150px;
-  background: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%);
-}
-.technology-background__image {
-  position: relative;
-  bottom: 150px;
-  right: 100px;
-}
-.technology-background__title {
-  max-width: 300px;
-  color: #223963;
-  font-family: "GeomanistLight";
-  font-weight: 300;
-  font-size: 60px;
-  font-size: 3.75rem;
-  line-height: 70px;
-  line-height: 4.375rem;
-}
-.technology-background__title span {
-  color: #3277BC;
-  font-family: "GeomanistBold";
-  font-weight: 700;
-}
-
 .sectors {
   display: flex;
   flex-direction: column;
@@ -589,7 +715,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 40px 50px;
+  padding: 40px 50px 10px 50px;
   max-width: 350px;
 }
 .sectors__item:first-child {
@@ -615,7 +741,7 @@
   line-height: 1.625rem;
 }
 .sectors__text {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   color: #636364;
   font-family: "GeomanistLight";
   font-weight: 300;
@@ -625,9 +751,11 @@
   line-height: 1.625rem;
 }
 .sectors__detail-link {
+  padding: 10px 0;
   cursor: pointer;
 }
 .sectors__detail-link span {
+  opacity: 0;
   margin-right: 10px;
   text-transform: uppercase;
   text-decoration: underline;
@@ -638,9 +766,31 @@
   font-size: 1rem;
   line-height: 16px;
   line-height: 1rem;
+  transform: translate3d(-50px, 0, 0);
+  /* ADDED - start x position as -50px */
+  cursor: pointer;
+  transition: 0.2s all ease-in;
+}
+.sectors__detail-link img {
+  transform: translate3d(-110px, 0, 0);
+  /* ADDED - start x position as -50px */
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+.sectors__detail-link:hover span {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.sectors__detail-link:hover img {
+  transform: translate3d(0, 0, 0);
 }
 .sectors-all__link {
   margin: 0 0 60px 0;
+}
+@media only screen and (min-width: 1248px) {
+  .sectors__container {
+    padding: 25px;
+  }
 }
 @font-face {
   font-family: "GeomanistThin";
@@ -752,7 +902,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 60px 40px;
+  padding: 40px 30px;
   width: 100%;
   height: 200px;
 }
@@ -767,19 +917,19 @@
   margin-bottom: 10px;
   color: #fff;
   letter-spacing: 0.3px;
-  font-family: "GeomanistBold";
-  font-weight: 700;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 20px;
-  line-height: 1.25rem;
+  font-family: "GeomanistBook";
+  font-weight: 600;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 18px;
+  line-height: 1.125rem;
 }
 .solutions__text {
   color: #fff;
   font-family: "GeomanistLight";
   font-weight: 300;
-  font-size: 20px;
-  font-size: 1.25rem;
+  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 26px;
   line-height: 1.625rem;
 }
@@ -788,8 +938,8 @@
 }
 .solutions__link img {
   margin-top: 30px;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
 }
 .solutions-all {
   display: flex;
@@ -816,6 +966,27 @@
 }
 .solutions-all__link:hover {
   color: #48ABDF;
+}
+@media only screen and (min-width: 1248px) {
+  .solutions__wrapper {
+    padding: 60px 45px;
+  }
+  .solutions__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 20px;
+    line-height: 1.25rem;
+  }
+  .solutions__text {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 26px;
+    line-height: 1.625rem;
+  }
+  .solutions__link img {
+    width: 50px;
+    height: 50px;
+  }
 }
 @font-face {
   font-family: "GeomanistThin";
@@ -876,14 +1047,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 150px 70px 150px;
+  padding: 100px 25px 70px 25px;
   width: 100%;
   background-color: #EBF1F3;
 }
 .success-stories__container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   width: 100%;
   max-width: 1440px;
 }
@@ -894,65 +1065,51 @@
   align-items: flex-start;
   justify-content: flex-start;
   margin: 0 12px;
-  padding: 50px 30px 40px 30px;
+  padding: 50px 30px 26px 30px;
   background-color: #fff;
   background-image: url(../../assets/svg/quotes-icon.svg);
   background-repeat: no-repeat;
   background-size: initial;
   background-position: 5% 35%;
-  border-radius: 4px;
-  transition: all 0.2s ease-in-out;
-}
-.success-stories__card:first-child {
   border-width: 4px;
   border-style: solid;
-  border-image: linear-gradient(90deg, #610688 0%, #9F4896 100%) 1;
   border-top: none;
   border-right: none;
   border-left: none;
+  border-radius: 4px;
+}
+.success-stories__card:hover {
+  padding: 46px 26px 26px 26px;
+  border-width: 4px;
+  border-style: solid;
+  cursor: pointer;
+}
+.success-stories__card:first-child {
+  border-image: linear-gradient(90deg, #610688 0%, #9F4896 100%) 1;
 }
 .success-stories__card:first-child .success-stories__company {
   color: #9F4896;
 }
 .success-stories__card:first-child:hover {
-  border-width: 4px;
-  border-style: solid;
   border-image: linear-gradient(90deg, #610688 0%, #9F4896 100%) 1;
-  cursor: pointer;
 }
 .success-stories__card:nth-child(2) {
-  border-width: 4px;
-  border-style: solid;
   border-image: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%) 1;
-  border-top: none;
-  border-right: none;
-  border-left: none;
 }
 .success-stories__card:nth-child(2) .success-stories__company {
   color: #48ABDF;
 }
 .success-stories__card:nth-child(2):hover {
-  border-width: 4px;
-  border-style: solid;
   border-image: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%) 1;
-  cursor: pointer;
 }
 .success-stories__card:last-child {
-  border-width: 4px;
-  border-style: solid;
   border-image: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%) 1;
-  border-top: none;
-  border-right: none;
-  border-left: none;
 }
 .success-stories__card:last-child .success-stories__company {
   color: #FBB03B;
 }
 .success-stories__card:last-child:hover {
-  border-width: 4px;
-  border-style: solid;
   border-image: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%) 1;
-  cursor: pointer;
 }
 .success-stories__company {
   margin: 0;
@@ -967,7 +1124,7 @@
 .success-stories__headline {
   margin: 0;
   color: #3B3C3F;
-  font-family: "GeomanistRegular";
+  font-family: "GeomanistMedium";
   font-weight: 500;
   font-size: 22px;
   font-size: 1.375rem;
@@ -996,17 +1153,18 @@
   border-top: 1px solid #E7EBED;
 }
 .success-stories__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 15px;
-}
-.success-stories__image img {
-  display: block;
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  background-color: #EBF1F3;
+  overflow: hidden;
 }
 .success-stories__image img.-padding {
   padding: 10px;
-  background-color: #EBF1F3;
 }
 .success-stories__author-wrapper {
   display: flex;
@@ -1017,7 +1175,7 @@
 .success-stories__author-name {
   margin: 0;
   color: #3B3C3F;
-  font-family: "GeomanistRegular";
+  font-family: "GeomanistMedium";
   font-weight: 500;
   font-size: 17px;
   font-size: 1.0625rem;
@@ -1033,4 +1191,9 @@
   font-size: 0.9375rem;
   line-height: 30px;
   line-height: 1.875rem;
+}
+@media only screen and (min-width: 1248px) {
+  .success-stories {
+    padding: 100px 150px 70px 150px;
+  }
 }

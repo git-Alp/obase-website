@@ -1,20 +1,21 @@
 .header {
 	z-index: z-index(header);
 	position: sticky;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+	top: 0;
+  display: block;
   width: 100%;
   max-height: 120px;
 
 	&-top {
-		display: flex;
+		display: none;
 		align-items: center;
 		justify-content: center;
 		width: 100%;
 		background-color: $porcelain;
+
+		@include mq(tablet-wide, min) {
+			display: flex;
+		}
 
 		&__container {
 			display: flex;
@@ -22,31 +23,44 @@
 			justify-content: flex-end;
 			align-items: center;
 			width: 1440px;
-			padding: 10px 150px 10px 0;
+			padding: 8px 25px 7px 0;
+
+			@include mq(desktop-small, min) {
+				padding-right: 150px;
+			}
 		}
 
-		&__titles {
+		&__nav {
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-end;
 			align-items: center;
 		}
 
-		&__item {
+		&__nav-item {
 			margin: 0 0 0 10px;
 		}
 
-		&__link {
+		&__nav-link {
 			padding: 5px;
+			color: $mid-gray;
 			font-family: $GeomanistRegular;
-			font-size: 12px;
-			font-weight: 500;
-			color: $tuna;
-
+			font-weight: 400;
+			@include font-size(14, 25);
+			
 			&.-language {
 				margin-right: 10px;
+				color: $azure;
+				font-family: $GeomanistBook;
 				font-weight: 600;
-				color: $picton-blue;
+
+				&:hover {
+					color: $cello;
+				}
+			}
+
+			&:hover {
+				color: $tuna;
 			}
 		}
 		
@@ -60,6 +74,7 @@
 		justify-content: center;
 		width: 100%;
 		background-color: $white;
+		border-bottom: 1px solid $porcelain;
 
 		&__container {
 			display: flex;
@@ -67,7 +82,11 @@
 			align-items: center;
 			justify-content: space-between;
 			width: 1440px;
-			padding: 18px 150px;
+			padding: 18px 25px;
+
+			@include mq(desktop-small, min) {
+				padding: 18px 150px;
+			}
 		}
 
 		&__logo-link {
@@ -78,15 +97,19 @@
 			}
 		}
 
-		&__titles {
-			display: flex;
+		&__nav {
+			display: none;
 			flex-direction: row;
 			justify-content: flex-end;
 			align-items: center;
 			width: 100%;
+
+			@include mq(tablet-wide, min) {
+				display: flex;
+			}
 		}
 
-		&__item {
+		&__nav-item {
 			position: relative;
 			display: flex;
 			justify-content: flex-start;
@@ -109,7 +132,7 @@
 			}
 		}
 
-		&__link {
+		&__nav-link {
 			display: flex;
 			justify-content: flex-start;
 			align-items: flex-start;
@@ -140,6 +163,94 @@
 				background-color: $picton-blue;
 				transform: translateX(-50%);
 				transition: opacity 0.2s ease-out;
+			}
+		}
+	}
+
+	&__hamburger {
+		z-index: 10;
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		width: 80px;
+		height: 100%;
+
+		transition: background-color 0.3s;
+
+		cursor: pointer;
+
+		@include mq(tablet-wide, min) {
+			display: none;
+		}
+
+		&-content {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			margin-top: 5px;
+			width: 30px;
+			height: 18px;
+		}
+
+		.line {
+			position: absolute;
+			left: 0;
+
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: flex-start;
+
+			width: 30px;
+			height: 0;
+
+			border-bottom: 2px solid $azure;
+			transition: border-color 0.3s;
+
+			&.-top {
+				top: 0;
+				transform: translate(0, 0) rotate(0);
+				transition: transform 0.3s;
+			}
+
+			&.-center {
+				top: 8px;
+				transition: opacity 0.3s, transform 0.3s;
+			}
+
+			&.-bottom {
+				top: 16px;
+				transform: translate(0, 0) rotate(0);
+				transition: transform 0.3s;
+			}
+		}
+
+		&.-on {
+			background-color: $eastern-blue;
+
+			.line {
+				border-color: $white;
+
+				&.-top {
+					transform: translate(0, 4px) rotate(44deg);
+				}
+
+				&.-center {
+					opacity: 0;
+					transform: translateX(-10px);
+				}
+
+				&.-bottom {
+					transform: translate(0, -6px) rotate(-44deg);
+				}
 			}
 		}
 	}

@@ -1,3 +1,80 @@
 <footer class="footer" footer>
-	footer
+	<div class="footer-top">
+		<div class="footer-top__wrapper">
+			<a href="/" class="footer-top__logo-link">
+				<img src="/assets/svg/logo-white.svg" alt="obase">
+			</a>
+			<h6 class="footer-top__social-title">
+				{{data.languagesTags | findTag('footer-follow-us-title', data.content.languageID)}}
+			</h6>
+			<div class="footer-top__social-icons">
+				<a href="{{data.languagesTags | findTag('social-linkedin-url', data.content.languageID)}}" class="footer-top__social-item -linkedin" title="linkedin" target="_blank" rel="noreferrer nofollow">
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M2.11954 0C0.950813 0 0 0.949781 0 2.11721C0 3.28516 0.950813 4.2353 2.11954 4.2353C3.28733 4.2353 4.23737 3.28511 4.23737 2.11721C4.23742 0.949781 3.28733 0 2.11954 0ZM3.72439 5.12976H0.512361C0.369806 5.12976 0.254297 5.24532 0.254297 5.38783V15.7067C0.254297 15.8492 0.369806 15.9648 0.512361 15.9648H3.72439C3.86694 15.9648 3.98245 15.8492 3.98245 15.7067V5.38783C3.98245 5.24532 3.86694 5.12976 3.72439 5.12976ZM9.07226 6.05801C9.65068 5.42787 10.6043 4.87329 11.8944 4.87329C15.5122 4.87329 16 7.48847 16 10.0467V15.7067C16 15.8493 15.8845 15.9648 15.7419 15.9648H12.5357C12.3932 15.9648 12.2777 15.8493 12.2777 15.7067V10.6898C12.2777 9.28506 12.1739 8.21058 10.8678 8.21058C9.66849 8.21058 9.20119 8.88083 9.20119 10.6012V15.7067C9.20119 15.8492 9.08568 15.9647 8.94312 15.9647H5.73812C5.59556 15.9647 5.48005 15.8492 5.48005 15.7067V5.38782C5.48005 5.24532 5.59556 5.12976 5.73812 5.12976H8.81419C8.95675 5.12976 9.07226 5.24532 9.07226 5.38782V6.05801Z" fill="white"/>
+					</svg>
+				</a>
+				<a href="{{data.languagesTags | findTag('social-facebook-url', data.content.languageID)}}" class="footer-top__social-item -facebook" title="facebook" target="_blank" rel="noreferrer nofollow">
+					<svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0.258065 8.5216H2.01192V15.7419C2.01192 15.8845 2.12743 16 2.26999 16H5.24372C5.38627 16 5.50178 15.8845 5.50178 15.7419V8.55561H7.51799C7.64908 8.55561 7.75938 8.45724 7.77435 8.32702L8.08057 5.66885C8.08898 5.59572 8.06581 5.52248 8.01688 5.46761C7.9679 5.4127 7.89781 5.38126 7.82426 5.38126H5.50188V3.71499C5.50188 3.2127 5.77234 2.95799 6.30581 2.95799C6.38183 2.95799 7.82426 2.95799 7.82426 2.95799C7.96681 2.95799 8.08232 2.84243 8.08232 2.69992V0.259974C8.08232 0.117419 7.96681 0.00190968 7.82426 0.00190968H5.73161C5.71685 0.0011871 5.68408 0 5.63577 0C5.27267 0 4.01058 0.0712774 3.01363 0.988439C1.90901 2.0048 2.06255 3.22173 2.09925 3.43272V5.38121H0.258065C0.11551 5.38121 0 5.49672 0 5.63928V8.26348C0 8.40604 0.11551 8.5216 0.258065 8.5216Z" fill="white"/>
+					</svg>
+				</a>
+				<a href="{{data.languagesTags | findTag('social-twitter-url', data.content.languageID)}}" class="footer-top__social-item -twitter" title="twitter" target="_blank" rel="noreferrer nofollow">
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g clip-path="url(#clip0_351_821)">
+							<path d="M16 3.039C15.405 3.3 14.771 3.473 14.11 3.557C14.79 3.151 15.309 2.513 15.553 1.744C14.919 2.122 14.219 2.389 13.473 2.538C12.871 1.897 12.013 1.5 11.077 1.5C9.261 1.5 7.799 2.974 7.799 4.781C7.799 5.041 7.821 5.291 7.875 5.529C5.148 5.396 2.735 4.089 1.114 2.098C0.831 2.589 0.665 3.151 0.665 3.756C0.665 4.892 1.25 5.899 2.122 6.482C1.595 6.472 1.078 6.319 0.64 6.078C0.64 6.088 0.64 6.101 0.64 6.114C0.64 7.708 1.777 9.032 3.268 9.337C3.001 9.41 2.71 9.445 2.408 9.445C2.198 9.445 1.986 9.433 1.787 9.389C2.212 10.688 3.418 11.643 4.852 11.674C3.736 12.547 2.319 13.073 0.785 13.073C0.516 13.073 0.258 13.061 0 13.028C1.453 13.965 3.175 14.5 5.032 14.5C11.068 14.5 14.368 9.5 14.368 5.166C14.368 5.021 14.363 4.881 14.356 4.742C15.007 4.28 15.554 3.703 16 3.039Z" fill="white"/>
+						</g>
+						<defs>
+							<clipPath id="clip0_351_821">
+								<rect width="16" height="16" fill="white"/>
+							</clipPath>
+						</defs>
+					</svg>
+				</a>
+				<a href="{{data.languagesTags | findTag('social-youtube-url', data.content.languageID)}}" class="footer-top__social-item -youtube" title="youtube" target="_blank" rel="noreferrer nofollow">
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15.1831 4.25079C15.0103 3.60818 14.5036 3.10162 13.8611 2.92859C12.6873 2.60742 7.992 2.60742 7.992 2.60742C7.992 2.60742 3.29691 2.60742 2.12311 2.91641C1.49295 3.08926 0.973938 3.60828 0.801086 4.25079C0.492188 5.4245 0.492188 7.85861 0.492188 7.85861C0.492188 7.85861 0.492188 10.305 0.801086 11.4664C0.974121 12.1089 1.48059 12.6155 2.1232 12.7885C3.30926 13.1098 7.99219 13.1098 7.99219 13.1098C7.99219 13.1098 12.6873 13.1098 13.8611 12.8008C14.5037 12.6279 15.0103 12.1213 15.1833 11.4788C15.4921 10.305 15.4921 7.87097 15.4921 7.87097C15.4921 7.87097 15.5045 5.4245 15.1831 4.25079ZM6.49713 10.1073V5.60989L10.4015 7.85861L6.49713 10.1073Z" fill="white"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+
+		<div class="footer-top__nav-container">
+
+			{% for nav in data.navigation %}
+			{% set navLink = nav.path %}
+
+			{% if nav.redirectUrl != "" %}
+				{% set navLink = nav.redirectUrl %}
+			{% endif %}
+
+			<div class="footer-top__nav-item">
+				<a href="{{nav.path}}" class="footer-top__nav-title" title="{{ nav.pageContentName }}" target="{{ nav.target }}">{{nav.pageContentName}}</a>
+				{% if nav.sub and nav.sub != "" %}
+				{% for navItem in nav.sub %}
+					<a href="{{ navItem.path }}" class="footer-top__nav-sub-title" title="{{ navItem.pageContentName }}" target="{{ navItem.target }}">{{ navItem.pageContentName }}</a>
+				{% endfor %}
+				{% endif %}
+			</div>
+
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="footer-bottom">
+		<small class="footer-bottom__copyright">
+			{{data.languagesTags | findTag('copyright-text', data.content.languageID) | safe}}
+		</small>
+		<div class="footer-bottom__links">
+			<a href="{{ data.languagesTags | findTag('footer-information-society-url', data.content.languageID) }}" class="footer-bottom__link" title="{{ data.languagesTags | findTag('footer-information-society-text', data.content.languageID) }}">
+				{{ data.languagesTags | findTag('footer-information-society-text', data.content.languageID) }}
+			</a>
+				<span class="footer-bottom__line">|</span>
+				<a href="{{ data.languagesTags | findTag('footer-kvk-url', data.content.languageID) }}" class="footer-bottom__link" title="{{ data.languagesTags | findTag('footer-kvk-text', data.content.languageID) }}">
+					{{ data.languagesTags | findTag('footer-kvk-text', data.content.languageID) }}
+				</a>
+		</div>
+		<a href="https://www.gricreative.com/" class="footer-bottom__gricreative" title="{{data.languagesTags | findTag('gricreative-name', data.content.languageID)}}" target="_blank" rel="noreferrer">
+			<img src="/assets/svg/logotype-gricreative.svg" width="73" height="14" alt="Gricreative" >
+		</a>
+	</div>
 </footer>

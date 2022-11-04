@@ -70,6 +70,7 @@ section {
 	}
 
 	&-link {
+		padding: 10px;
 		color: $tuna;
 		text-align: center;
 		text-transform: uppercase;
@@ -78,6 +79,10 @@ section {
 		font-family: $GeomanistBold;
 		font-weight: 700;
 		@include font-size(16, 16);
+
+		&:hover {
+			color: $picton-blue;
+		}
 	}
 }
 //grid

@@ -5,9 +5,13 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 100px 220px 70px 220px;
+  padding: 100px 25px 70px 25px;
   width: 100%;
   background: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%);
+
+  @include mq(desktop-small, min) {
+    padding: 100px 220px 70px 220px;
+  }
 
   &__container {
     display: flex;
@@ -30,7 +34,11 @@
     color: $white;
     font-family: $GeomanistBold;
     font-weight: 700;
-    @include font-size(90, 90);
+    @include font-size(80, 80);
+
+    @include mq(desktop-small, min) {
+      @include font-size(90, 90);
+    }
   }
 
   &__key {
@@ -38,6 +46,10 @@
     color: $yellow-orange;
     font-family: $GeomanistBold;
     font-weight: 700;
-    @include font-size(20, 20);
+    @include font-size(18, 18);
+
+    @include mq(desktop-small, min) {
+      @include font-size(20, 20);
+    }
   }
 }

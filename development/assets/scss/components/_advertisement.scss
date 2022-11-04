@@ -1,0 +1,85 @@
+.advertisement {
+	z-index: 2;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+
+	display: none;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+
+	padding: 10px;
+
+	width: 100%;
+	max-width: 425px;
+	min-height: 120px;
+
+	border-radius: 2px;
+	background-color: $white;
+
+	transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), left 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+	@include mq(tablet-wide, min) {
+		display: flex;
+	}
+
+	&__image {
+		flex-shrink: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: flex-start;
+
+		margin: 0 20px 0 0;
+		width: 100px;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+
+		p {
+			margin: 0;
+			color: $tuna;
+			font-family: $GeomanistMedium;
+			font-weight: 500;
+			@include font-size(22, 28);
+
+			&:first-child {
+				margin-bottom: 5px;
+			}
+
+			a {
+				color: $picton-blue;
+				text-decoration: underline;
+				font-family: $GeomanistBold;
+				font-weight: 700;
+				@include font-size(13, 13);
+			}
+		}
+	}
+
+	&__close {
+		z-index: 1;
+		position: absolute;
+		top: 5px;
+		right: 5px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: flex-start;
+
+		padding: 5px;
+		cursor: pointer;
+	}
+
+	&.-hide {
+		transform: translateX(-100%);
+		left: 0;
+	}
+
+}

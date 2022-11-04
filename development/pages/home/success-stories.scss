@@ -6,14 +6,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 150px 70px 150px;
+  padding: 100px 25px 70px 25px;
   width: 100%;
   background-color: $mystic;
+
+  @include mq(desktop-small, min) {
+    padding: 100px 150px 70px 150px;
+  }
 
   &__container {
     display: grid;
     grid-template-columns: repeat(3,minmax(0,1fr));
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     width: 100%;
     max-width: 1440px;
   }
@@ -26,87 +30,61 @@
     justify-content: flex-start;
 
     margin: 0 12px;
-    padding: 50px 30px 40px 30px;
+    padding: 50px 30px 26px 30px;
 
     background-color: $white;
     background-image: url(../../assets/svg/quotes-icon.svg);
     background-repeat: no-repeat;
     background-size: initial;
     background-position: 5% 35%;
-
+    
+    border-width: 4px;
+    border-style: solid;
+    border-top: none;
+    border-right: none;
+    border-left: none;
     border-radius: 4px;
-    transition: all .2s ease-in-out;
 
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   display: flex;
-    //   flex-direction: row;
-    //   justify-content: flex-start;
-    //   align-items: flex-start;
-    //   width: 100%;
-    //   height: 100%;
-    // }
-
-    &:first-child {
+    &:hover {
+      padding: 46px 26px 26px 26px;
       border-width: 4px;
       border-style: solid;
+      cursor: pointer;
+    }
+
+    &:first-child {
       border-image: linear-gradient(90deg, #610688 0%, #9F4896 100%) 1;
-      border-top: none;
-      border-right: none;
-      border-left: none;
 
 			#{$success-stories}__company {
         color: $tapestry;
 			}
 
 			&:hover {
-        border-width: 4px;
-        border-style: solid;
         border-image: linear-gradient(90deg, #610688 0%, #9F4896 100%) 1;
-        cursor: pointer;
 			}
 		}
 
 		&:nth-child(2) {
-      border-width: 4px;
-      border-style: solid;
       border-image: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%) 1;
-      border-top: none;
-      border-right: none;
-      border-left: none;
 
 			#{$success-stories}__company {
         color: $picton-blue;
 			}
 
 			&:hover {
-        border-width: 4px;
-        border-style: solid;
         border-image: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%) 1;
-        cursor: pointer;
       }
     }
 
 		&:last-child {
-      border-width: 4px;
-      border-style: solid;
       border-image: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%) 1;
-      border-top: none;
-      border-right: none;
-      border-left: none;
 
 			#{$success-stories}__company {
         color: $yellow-orange;
 			}
 
 			&:hover {
-        border-width: 4px;
-        border-style: solid;
         border-image: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%) 1;
-        cursor: pointer;
 			}
 		}
   }
@@ -122,7 +100,7 @@
   &__headline {
     margin: 0;
     color: $tuna;
-    font-family: $GeomanistRegular;
+    font-family: $GeomanistMedium;
     font-weight: 500;
     @include font-size(22, 30);
   }
@@ -149,17 +127,19 @@
   }
 
   &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 15px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: $mystic;
+    overflow: hidden;
 
     img {
-      display: block;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-
       &.-padding {
         padding: 10px;
-        background-color: $mystic;
       }
     }
 
@@ -175,7 +155,7 @@
   &__author-name {
     margin: 0;
     color: $tuna;
-    font-family: $GeomanistRegular;
+    font-family: $GeomanistMedium;
     font-weight: 500;
     @include font-size(17, 30);
   }

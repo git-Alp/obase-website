@@ -27,5 +27,9 @@
     color: $white;
     background: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%);
     @include font-size(13, 13);
+
+    &:hover {
+      background: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%);
+    }
   }
 }

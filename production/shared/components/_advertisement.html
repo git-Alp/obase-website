@@ -1,0 +1,26 @@
+{% set advertisement = data.contents | findContent('advertisement-tooltip') %}
+{% if advertisement and advertisement.length != "" and advertisement != "false" %}
+	{% set advertisementValue = advertisement | checkboxArray() %}
+
+	{% if advertisementValue == "show" %}
+		<div class="advertisement" data-advertisement>
+			{% set adsImage = data.contents | findContent('advertisement-image') %}
+			{% if adsImage and adsImage.length != "" and adsImage != "false" %}
+				<div class="advertisement__image">
+					<img lazy="{{ adsImage }}" alt="banner">
+				</div>
+			{% endif %}
+
+			{% set adsEditor = data.contents | findContent('advertisement-editor') | safe %}
+			{% if adsEditor and adsEditor.length != "" and adsEditor != "false" %}
+				<div class="advertisement__content">
+					{{ adsEditor }}
+				</div>
+			{% endif %}
+
+			<div class="advertisement__close" data-advertisement-close>
+				<img lazy="assets/svg/close-icon.svg" alt="close">
+			</div>
+		</div>
+	{% endif %}
+{% endif %}
