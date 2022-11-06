@@ -9,6 +9,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: 0 25px;
     width: 100%;
     background-color: $mystic;
   }
@@ -22,11 +23,15 @@
   }
 
   &__button {
-    margin: 20px 30px;
+    margin: 20px;
     padding: 16px 40px 13px 40px;
     color: $white;
     background: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%);
     @include font-size(13, 13);
+
+    @include mq(tablet-small, min) {
+      margin: 20px 30px;
+    }
 
     &:hover {
       background: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%);

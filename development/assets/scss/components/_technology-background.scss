@@ -6,43 +6,84 @@
   &__top {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding-left: 25px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 25px;
     width: 100%;
-    height: 310px;
+    height: 225px;
     background-color: $mystic;
 
+    @include mq(phone-wide, min) {
+      height: 250px;
+    }
+
+    @include mq(tablet-small, min) {
+      height: 310px;
+    }
+
+    @include mq(tablet-wide, min) {
+      align-items: flex-start;
+      justify-content: center;
+    }
+
     @include mq(desktop-small, min) {
-      padding-left: 130px;
+      padding: 0 0 0 130px;
     }
   }
 
   &__bottom {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    padding: 0 25px;
     width: 100%;
-    height: 150px;
+    height: 120px;
     background: linear-gradient(90deg, #223962 0%, #3277BC 52.6%, #48ABDF 97.4%);
+    
+    @include mq(phone, min) {
+      height: 130px;
+    }
+    
+    @include mq(tablet-small, min) {
+      height: 150px;
+    }
+    
+    @include mq(tablet-wide, min) {
+      justify-content: flex-end;
+    }
   }
 
   &__image {
     position: relative;
-    bottom: 150px;
-    right: 25px;
+    bottom: 50px;
+    
+    @include mq(phone-wide, min) {
+      bottom: 70px;
+    }
+    
+    @include mq(tablet-small, min) {
+      bottom: 125px;
+    }
 
     @include mq(desktop-small, min) {
       right: 100px;
+      bottom: 150px;
     }
   }
   
   &__title {
-    max-width: 300px;
+    width: 100%;
     color: $cello;
+    text-align: center;
     font-family: $GeomanistLight;
     font-weight: 300;
-    @include font-size(60, 70);
+    @include font-size(50, 60);
+
+    @include mq(tablet-wide, min) {
+      max-width: 300px;
+      text-align: left;
+      @include font-size(60, 70);
+    }
 
     span {
       color: $boston-blue;

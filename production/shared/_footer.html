@@ -47,7 +47,7 @@
 				{% set navLink = nav.redirectUrl %}
 			{% endif %}
 
-			<div class="footer-top__nav-item">
+			<div class="footer-top__nav-item {{'-top' if nav.sub == ''}}">
 				<a href="{{nav.path}}" class="footer-top__nav-title" title="{{ nav.pageContentName }}" target="{{ nav.target }}">{{nav.pageContentName}}</a>
 				{% if nav.sub and nav.sub != "" %}
 				{% for navItem in nav.sub %}
