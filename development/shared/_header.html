@@ -1,25 +1,46 @@
 {% set languageNav =  data.languages %}
 {% set reflect = data.page.meta[0].language %}
 
+{% set corporateTitle = data.languagesTags | findTag('corporate-text', data.content.languageID) %}
+{% set investorRelationsTitle = data.languagesTags | findTag('investor-relations-text', data.content.languageID) %}
+{% set contactTitle = data.languagesTags | findTag('contact-text', data.content.languageID) %}
+
 <header class="header" header>
 	<div class="header-top">
 		<div class="header-top__container">
 			<div class="header-top__nav">
-				<div class="header-top__nav-item">
-					<a class="header-top__nav-link" href="/kurumsal">Kurumsal</a>
-				</div>
-				<div class="header-top__nav-item">
-					<a class="header-top__nav-link" href="/yatirimci-iliskileri">Yatırımcı ilişkileri</a>
-				</div>
-				<div class="header-top__nav-item">
-					<a class="header-top__nav-link" href="/iletisim">İletişim</a>
-				</div>
+				{% for nav in data.navigation %}
+					{% set navLink = nav.path %}
+		
+					{% if nav.redirectUrl != "" %}
+						{% set navLink = nav.redirectUrl %}
+					{% endif %}
+
+					{% if nav.pageContentName == corporateTitle or nav.pageContentName == investorRelationsTitle or nav.pageContentName == contactTitle %}
+					<div class="header-top__nav-item">
+						<a class="header-top__nav-link" href="{{navLink}}" title="{{ nav.pageContentName }}">{{nav.pageContentName}}</a>
+					</div>
+					{% endif %}
+				{% endfor %}
+
+				{# GEÇİCİ DİNAMİK DİL SEÇENEĞİ #}
 				<div class="header-top__nav-item">
 					<a class="header-top__nav-link -language" href="/en">EN</a>
 				</div>
+
+		{#  {% for item in languageNav %}
+					{% set num = loop.index - 1 %}
+					{% if data.content.languageID != item.id %}
+					<div class="header-top__nav-item">
+						<a class="header-top__nav-link -language" href="{{ reflect[num].url }}" lang="{{ item.cultureInfo }}">{{ item.cultureInfo | upper }}</a>
+					</div>
+					{% endif %}
+				{% endfor %} #}
+
 			</div>
 		</div>
 	</div>
+
 	<div class="header-bottom">
 		<div class="header-bottom__container">
 			<div class="header-bottom__logo">
@@ -28,22 +49,42 @@
 				</a>
 			</div>
 			<div class="header-bottom__nav">
-				<div class="header-bottom__nav-item">
-					<a class="header-bottom__nav-link" href="/sektorler">Sektörler</a>
-				</div>
-				<div class="header-bottom__nav-item">
-					<a class="header-bottom__nav-link" href="/cozumlerimiz">Çözümlerimiz</a>
-				</div>
-				<div class="header-bottom__nav-item">
-					<a class="header-bottom__nav-link" href="/sektorler">Profesyonel Hizmetler</a>
-				</div>
-				<div class="header-bottom__nav-item">
-					<a class="header-bottom__nav-link" href="/is-ortaklarimiz">İş Ortaklarımız</a>
-				</div>
-				<div class="header-bottom__nav-item">
-					<a class="header-bottom__nav-link" href="/basari-hikayelerimiz">Başarı Hikayelerimiz</a>
-				</div>
+				{% for nav in data.navigation %}
+					{% set navLink = nav.path %}
+		
+					{% if nav.redirectUrl != "" %}
+						{% set navLink = nav.redirectUrl %}
+					{% endif %}
+
+					{% if nav.pageContentName != corporateTitle and nav.pageContentName != investorRelationsTitle and nav.pageContentName != contactTitle %}
+					<div class="header-bottom__nav-item">
+						<a class="header-bottom__nav-link" href="{{navLink}}" title="{{ nav.pageContentName }}">{{nav.pageContentName}}</a>
+
+						{% if nav.sub and nav.sub != "" %}
+							<div class="header-bottom__sub-container">
+								{% for subTitle in nav.sub %}
+									<div class="header-bottom__sub-item">
+										<a class="header-bottom__sub-link" href="{{subTitle.path}}" title="{{ subTitle.pageContentName }}">{{subTitle.pageContentName}}</a>
+									</div>
+								{% endfor %}
+							</div>
+						{% endif %}
+					</div>
+					{% endif %}
+				{% endfor %}
+
 			</div>  
+
+		</div>
+	</div>
+
+	<div class="header-mobile">
+		<div class="header-mobile__wrapper">
+			<div class="header-mobile__logo">
+				<a class="header-mobile__logo__link" href="/">
+					<img src="./assets/svg/logo.svg" alt="obase">
+				</a>
+			</div>
 
 			<div class="header__hamburger" menu="toggle">
 				<div class="header__hamburger-content">
@@ -52,8 +93,25 @@
 					<span class="line -bottom"></span>
 				</div>
 			</div>
+		</div>
+		
+		<div class="header-mobile__nav" mobile-container>
+			{% for nav in data.navigation %}
+				{% set navLink = nav.path %}
 
+				{% if nav.redirectUrl != "" %}
+					{% set navLink = nav.redirectUrl %}
+				{% endif %}
+
+				<div class="header-mobile__nav-item" nav-item>
+					<a class="header-mobile__nav-link" href="{{navLink}}" title="{{ nav.pageContentName }}">{{nav.pageContentName}}</a>
+				</div>
+			{% endfor %}
+			<div class="header-mobile__nav-item">
+				<a class="header-mobile__nav-link -language" href="/en">EN</a>
+			</div>
 		</div>
 	</div>
+
 
 </header>

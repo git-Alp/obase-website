@@ -1,8 +1,8 @@
-<mark class="technology-background" technology-background>
+<mark class="technology-background -animation" lazy="-done" lazy-element>
   <div class="technology-background__top">
-    <h3 class="technology-background__title">{{ data.languagesTags | findTag('technology-background-text', data.content.languageID) | safe }}</h3>
+    <h2 class="technology-background__title">{{ data.languagesTags | findTag('technology-background-text', data.content.languageID) | safe }}</h2>
   </div>
   <div class="technology-background__bottom">
-    <img class="technology-background__image" src="{{data.contents | findContent('technology-background-image')}}" alt="">
+    <img lazy="{{data.contents | findContent('technology-background-image')}}" class="technology-background__image" alt="">
   </div>
 </mark>

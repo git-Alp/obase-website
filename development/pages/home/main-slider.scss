@@ -1,16 +1,17 @@
 @import '../../assets/scss/_index';
-@import '../../assets/scss/components/_advertisement';
-@import '../../assets/scss/components/_reach-us';
-@import '../../assets/scss/components/_technology-background';
 
 .main-slider {
 	position: relative;
-	height: calc(100vh - 210px);
+	height: calc(100vh - 172px);
+	background-color: $havelock-blue;
+
+	@include mq(tablet-wide, min) {
+		height: calc(100vh - 210px);
+	}
 
 	@include mq(desktop-small, min) {
 		height: calc(100vh - 260px);
 	}
-	background-color: $havelock-blue;
 
 	.slider {
 		width: 100%;
@@ -43,16 +44,19 @@
 			z-index: 0;
 			position: absolute;
 			top: 25px;
-			left: 0;
 			width: 100%;
-			height: 60%;
+			height: 74%;
 
 			background-repeat: no-repeat;
 			background-size: contain;
-			background-position: center top;
+			background-position: center center;
 
 			@include mq(tablet-small, min) {
 				opacity: 1;
+				width: 100%;
+				height: 64%;
+				background-size: contain;
+				background-position: center top;
 			}
 			
 			@include mq(tablet-wide, min) {

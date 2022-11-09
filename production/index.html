@@ -1,7 +1,7 @@
 {% extends "templates/_base-template.html" %}
 
 {% block cdncss %}
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.min.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
 {% endblock %}
 
 {% block css %}
@@ -16,8 +16,8 @@
 	{% include "pages/home/_numbers.html" %}
 	{% include "pages/home/_partners-slider.html" %}
 	{% include "shared/components/_technology-background.html" %}
-	{% include "pages/home/_customers-slider.html" %}
-	{% include "pages/home/_success-stories.html" %}
+	{% include "shared/components/_customers-slider.html" %}
+	{% include "shared/components/_success-stories.html" %}
 {% endblock %}
 
 {% block sticky %}

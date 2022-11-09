@@ -5,7 +5,7 @@
 {% for item in numbersSubPage %}
 {% set item = item[0] %}
 {% if item.name == numbersText %}
-  <section class="numbers" numbers>
+  <section class="numbers -animation" lazy="-done" lazy-element numbers>
     <div class="numbers__container">
 
       {% set countryText = data.languagesTags | findTag('country-text', data.content.languageID) %}
@@ -20,26 +20,26 @@
 
       {% if country and country.length != "" and country != "false" %}
       <div class="numbers__item">
-        <div class="numbers__val">{{country}}</div>
-        <div class="numbers__key">{{countryText}}</div>
+        <span class="numbers__val" numbers-val="{{country}}">0</span>
+        <h3 class="numbers__key">{{countryText}}</h3>
       </div>
       {% endif %}
       {% if project and project.length != "" and project != "false" %}
       <div class="numbers__item">
-        <div class="numbers__val">{{project}}</div>
-        <div class="numbers__key">{{projectText}}</div>
+        <span class="numbers__val" numbers-val="{{project}}">0</span>
+        <h3 class="numbers__key">{{projectText}}</h3>
       </div>
       {% endif %}
       {% if experience and experience.length != "" and experience != "false" %}
       <div class="numbers__item">
-        <div class="numbers__val">{{experience}}</div>
-        <div class="numbers__key">{{experienceText}}</div>
+        <span class="numbers__val" numbers-val="{{experience}}">0</span>
+        <h3 class="numbers__key">{{experienceText}}</h3>
       </div>
       {% endif %}
       {% if specialist and specialist.length != "" and specialist != "false" %}
       <div class="numbers__item">
-        <div class="numbers__val">{{specialist}}</div>
-        <div class="numbers__key">{{specialistText}}</div>
+        <span class="numbers__val" numbers-val="{{specialist}}">0</span>
+        <h3 class="numbers__key">{{specialistText}}</h3>
       </div>
       {% endif %}
     </div>

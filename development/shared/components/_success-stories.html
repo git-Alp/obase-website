@@ -1,7 +1,7 @@
 {% set successStoriesSubPage = data.contents | findContent('success-stories-sub-page','result') %}
 {% if successStoriesSubPage and successStoriesSubPage.length != "" and successStoriesSubPage != "false" %}
 
-<section class="success-stories" success-stories>
+<section class="success-stories -animation" lazy="-done" lazy-element>
   <div class="success-stories__container">
 
     {% for item in successStoriesSubPage %}
@@ -16,16 +16,16 @@
 
       {% if loop.index < 4 %}
       <div class="success-stories__card">
-        <div class="success-stories__company">{{companyName}}</div>
-        <div class="success-stories__headline">{{headline}}</div>
+        <h3 class="success-stories__company">{{companyName}}</h3>
+        <h4 class="success-stories__headline">{{headline}}</h4>
         <div class="success-stories__text">{{editor}}</div>
         <div class="success-stories__bottom-wrapper">
           <div class="success-stories__image">
-            <img class="{{'-padding' if authorImage == false else ''}}" src="{{authorImage if authorImage != false else imageDefault}}" alt="{{item.name}}">
+            <img lazy="{{authorImage if authorImage != false else imageDefault}}" class="{{'-padding' if authorImage == false else ''}}" alt="{{item.name}}">
           </div>
           <div class="success-stories__author-wrapper">
-            <div class="success-stories__author-name">{{item.name}}</div>
-            <div class="success-stories__author-title">{{authorTitle}}</div>
+            <h2 class="success-stories__author-name">{{item.name}}</h2>
+            <h5 class="success-stories__author-title">{{authorTitle}}</h5>
           </div>
         </div>
       </div>

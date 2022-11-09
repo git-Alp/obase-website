@@ -2,7 +2,7 @@
 	<div class="footer-top">
 		<div class="footer-top__wrapper">
 			<a href="/" class="footer-top__logo-link">
-				<img src="/assets/svg/logo-white.svg" alt="obase">
+				<img lazy="/assets/svg/logo-white.svg" width="145" height="49" alt="OBASE">
 			</a>
 			<h6 class="footer-top__social-title">
 				{{data.languagesTags | findTag('footer-follow-us-title', data.content.languageID)}}
@@ -47,8 +47,8 @@
 				{% set navLink = nav.redirectUrl %}
 			{% endif %}
 
-			<div class="footer-top__nav-item {{'-top' if nav.sub == ''}}">
-				<a href="{{nav.path}}" class="footer-top__nav-title" title="{{ nav.pageContentName }}" target="{{ nav.target }}">{{nav.pageContentName}}</a>
+			<div class="footer-top__nav-item {{'-no-sub' if nav.sub == ''}}">
+				<a href="{{navLink}}" class="footer-top__nav-title" title="{{ nav.pageContentName }}" target="{{ nav.target }}">{{nav.pageContentName}}</a>
 				{% if nav.sub and nav.sub != "" %}
 				{% for navItem in nav.sub %}
 					<a href="{{ navItem.path }}" class="footer-top__nav-sub-title" title="{{ navItem.pageContentName }}" target="{{ navItem.target }}">{{ navItem.pageContentName }}</a>
@@ -74,7 +74,7 @@
 				</a>
 		</div>
 		<a href="https://www.gricreative.com/" class="footer-bottom__gricreative" title="{{data.languagesTags | findTag('gricreative-name', data.content.languageID)}}" target="_blank" rel="noreferrer">
-			<img src="/assets/svg/logotype-gricreative.svg" width="73" height="14" alt="Gricreative" >
+			<img lazy="/assets/svg/logotype-gricreative.svg" width="73" height="14" alt="Gricreative" >
 		</a>
 	</div>
 </footer>

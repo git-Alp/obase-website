@@ -51,6 +51,7 @@
     font-family: $GeomanistBold;
     font-weight: 700;
     @include font-size(80, 80);
+    white-space: nowrap;
 
     @include mq(desktop-small, min) {
       @include font-size(90, 90);
@@ -63,6 +64,7 @@
     font-family: $GeomanistBold;
     font-weight: 700;
     @include font-size(18, 18);
+    white-space: nowrap;
 
     @include mq(desktop-small, min) {
       @include font-size(20, 20);

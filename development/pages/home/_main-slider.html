@@ -14,10 +14,14 @@
 
       {% set buttonText = data.languagesTags | findTag('about-text', data.content.languageID) %}
 
-      <div class="slider__item swiper-slide {{'-gradient-bgc' if isGradient}}">
-        <div class="slider__bg" lazy="{{ slideImage }}" lazy-bg></div>
+      <div class="slider__item swiper-slide {{'-gradient-bgc' if isGradient == 'yes'}}">
+        <div class="slider__bg" style="background-image: url({{slideImage}})"></div>
         <div class="slider__content">
+          {% if loop.index == 1 %}
+          <h1 class="slider__title">{{slideTitle}}</h1>
+          {% else %}
           <h2 class="slider__title">{{slideTitle}}</h2>
+          {% endif %}
           <p class="slider__text">{{slideText}}</p>
           <a href="{{ slideLink }}" class="slider__button button-type" title="{{ buttonText }}">
             {{ buttonText }}

@@ -104,7 +104,7 @@
         margin: 0 0 20px 0;
         flex: 1 1 110px;
   
-        &.-top + #{$footer-top}__nav-item {
+        &.-no-sub + #{$footer-top}__nav-item {
           top: -94px;
           flex: 10;
         }
@@ -113,6 +113,7 @@
     }
 
     &__nav-title {
+      opacity: 1;
       margin-bottom: 10px;
       color: $white;
       font-family: $GeomanistLight;
@@ -122,6 +123,10 @@
 
       @include mq(tablet-wide, min) {
         text-align: left;
+      }
+
+      &:hover {
+        opacity: .8;
       }
     }
 

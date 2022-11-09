@@ -1,7 +1,7 @@
 {% set solutionsSubPage = data.contents | findContent('solutions-sub-page','result') %}
 {% if solutionsSubPage and solutionsSubPage.length != "" and solutionsSubPage != "false" %}
 
-<section class="solutions" solutions>
+<section class="solutions -animation" lazy="-done" lazy-element>
   
   <div class="solutions__container">
     {% for item in solutionsSubPage %}
@@ -13,15 +13,15 @@
     {% if loop.index < 4 %}
       <div class="solutions__item">
         <div class="solutions__image">
-          <img src="{{solutionImage}}" alt="{{item.name}}">
+          <img lazy="{{solutionImage}}" alt="{{item.name}}">
         </div>
         <div class="solutions__wrapper">
           <div class="solutions__content">
-            <div class="solutions__title">{{item.name}}</div>
-            <div class="solutions__text">{{solutionText}}</div>
+            <h3 class="solutions__title">{{item.name}}</h3>
+            <p class="solutions__text">{{solutionText}}</p>
           </div>
           <a class="solutions__link">
-            <img src="/assets/svg/white-arrow-icon.svg" width="50" height="50" alt="Detail Information">
+            <img lazy="/assets/svg/white-arrow-icon.svg" width="50" height="50" alt="Detail Information">
           </a>
         </div>
       </div>

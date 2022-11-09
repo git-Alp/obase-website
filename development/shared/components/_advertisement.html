@@ -7,7 +7,7 @@
 			{% set adsImage = data.contents | findContent('advertisement-image') %}
 			{% if adsImage and adsImage.length != "" and adsImage != "false" %}
 				<div class="advertisement__image">
-					<img lazy="{{ adsImage }}" alt="banner">
+					<img lazy="{{ adsImage }}" width="100" height="100" alt="banner">
 				</div>
 			{% endif %}
 
@@ -19,7 +19,7 @@
 			{% endif %}
 
 			<div class="advertisement__close" data-advertisement-close>
-				<img lazy="assets/svg/close-icon.svg" alt="close">
+				<img lazy="assets/svg/close-icon.svg" width="13" height="13" alt="close">
 			</div>
 		</div>
 	{% endif %}
