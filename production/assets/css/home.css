@@ -372,7 +372,7 @@
   grid-row-gap: 25px;
   margin-bottom: 50px;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1150px;
 }
 .success-stories__card {
   flex-grow: 1;
@@ -581,6 +581,14 @@
   }
   .success-stories {
     padding: 100px 150px 70px 150px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .technology-background__top {
+    padding-left: 180px;
+  }
+  .technology-background__image {
+    right: 140px;
   }
 }
 @font-face {
@@ -1416,7 +1424,7 @@
     width: 33.3333333333%;
   }
   .solutions__image img {
-    max-height: fit-content;
+    max-height: 400px;
   }
   .solutions__wrapper {
     justify-content: flex-start;

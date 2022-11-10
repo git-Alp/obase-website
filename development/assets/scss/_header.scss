@@ -131,6 +131,15 @@
 					transform: translateY(0%);
 				}
 			}
+
+			&.-fs {
+				&.-on {
+					#{$header}-fullscreen {
+						display: flex;
+					}
+				}
+			}
+			
 		}
 
 		&__nav-link {
@@ -177,7 +186,7 @@
 			align-items: flex-start;
 			justify-content: flex-start;
 			
-			padding: 20px;
+			padding: 10px 20px;
 			height: auto;
 			width: auto;
 			min-width: 300px;
@@ -193,12 +202,12 @@
 			display: flex;
 			justify-content: flex-start;
 			align-items: flex-start;
-			padding: 20px 0 10px 0;
 			width: 100%;
 			height: auto;
 			border-bottom: 1px solid rgba(230, 238, 240, 0.2);
 
 			&:last-child {
+				margin-bottom: 5px;
 				border: none;
 			}
 
@@ -210,6 +219,8 @@
 		}
 
 		&__sub-link {
+			padding: 20px 0 10px 0;
+			width: 100%;
 			color: $white;
 			text-transform: uppercase;
 			font-family: $GeomanistMedium;
@@ -387,6 +398,190 @@
 					transform: translate(0, -6px) rotate(-44deg);
 				}
 			}
+		}
+	}
+
+	&-fullscreen {
+		$fullscreen: &;
+		position: fixed;
+    top: 120px;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 70px 25px 25px 25px;
+    height: 100vh;
+    width: 100vw;
+    background: $cello;
+		overflow-x: hidden;
+    overflow-y: auto;
+
+		@include mq(desktop-small, min) {
+			padding: 70px 150px 25px 150px;
+		}
+
+		&__container {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: center;
+			width: 100%;
+			max-width: 1140px;
+		}
+
+		&__nav-base {
+			width: calc(100% / 4 * 3);
+		}
+
+		&__side-items {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			width: calc(100% / 4);
+		}
+
+		&__side-item {
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: flex-start;
+			width: 260px;
+			border-bottom: 1px solid $san-juan;
+			border-top: 1px solid $san-juan;
+
+			&.-active {
+				width: 280px;
+
+				#{$fullscreen}__nav-items {
+					visibility: visible;
+				}
+
+				#{$fullscreen}__side-link {
+					padding-bottom: 12px;
+					color: $picton-blue;
+
+					&::after {
+						content: "";
+		
+						position: relative;
+						top: -22px;
+						left: 230px;
+			
+						display: flex;
+						flex-direction: row;
+						justify-content: flex-start;
+						align-items: flex-start;
+			
+						width: 26px;
+						height: 13px;
+			
+						background-image: url('/assets/svg/menu-arrow.svg');
+						background-repeat: no-repeat;
+						background-size: cover;
+						background-position: center center;
+					}
+				}
+			}
+		}
+		
+		&__side-link {
+			color: $white;
+			padding: 25px 0;
+			width: 100%;
+			text-transform: uppercase;
+			font-family: $GeomanistMedium;
+			font-weight: 500;
+			@include font-size(20, 30);
+			letter-spacing: .3px;
+
+			&:hover {
+				color: $picton-blue;
+			}
+		}
+
+		&__nav-items {
+			position: absolute;
+			top: 0;
+			left: 279px;
+			visibility: hidden;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			width: 250px;
+			height: 680px;
+			
+			@include mq(desktop-small, min) {
+				width: 285px;
+				height: 615px;
+			}
+		}
+
+		&__nav-item {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			flex: 1 1 100px;
+			padding: 25px;
+			width: 100%;
+			border-left: 1px solid $san-juan;
+		}
+
+		&__nav-title {
+      margin-bottom: 5px;
+      color: $white;
+			font-family: $GeomanistMedium;
+			font-weight: 500;
+      @include font-size(16, 30);
+      text-align: left;
+
+			&:hover {
+				opacity: .8;
+			}
+		}
+
+		&__nav-sub-title {
+      opacity: .8;
+      color: $white;
+      font-family: $GeomanistLight;
+      font-weight: 300;
+      @include font-size(16, 30);
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		&__close-wrapper {
+			position: absolute;
+			top: 800px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+
+			@include mq(desktop-small, min) {
+				top: 750px;
+			}
+		}
+
+		&__close-button {
+			padding: 20px;
+			color: $picton-blue;
+			text-transform: uppercase;
+			text-decoration: underline;
+			font-family: $GeomanistBold;
+			font-weight: 700;
+			@include font-size(16, 16);
+			letter-spacing: .3px;
+			cursor: pointer;
 		}
 	}
 }

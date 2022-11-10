@@ -277,8 +277,44 @@ let iconNav = document.querySelector('[menu="toggle"]');
 let container = document.querySelector('[mobile-container]');
 let navItems = document.querySelectorAll('[nav-item]');
 let navSubItems = document.querySelectorAll('[nav-sub-item]');
+let headerFullscreen = document.querySelector('[header-fullscreen]');
+let sideItems = document.querySelectorAll('[fs-side-item]');
+let firstSideItem = document.querySelector('.header-fullscreen__side-item.-open');
+let solutions = document.querySelector('[solutions-title]');
+let closeButton = document.querySelector('[fs-close]');
 let active = "-active";
-let hover = "-hover"; // mobile menu click
+let hover = "-hover";
+
+const menuHover = () => {
+  headerFullscreen.addEventListener('mouseover', function () {
+    document.body.classList.add('-fixed');
+  });
+  solutions.addEventListener('mouseover', function () {
+    solutions.classList.add('-on');
+  });
+  solutions.addEventListener('mouseleave', function () {
+    solutions.classList.remove('-on');
+  });
+  headerFullscreen.addEventListener('mouseleave', function () {
+    solutions.classList.remove('-on');
+    document.body.classList.remove('-fixed');
+  });
+  closeButton.addEventListener('click', function () {
+    solutions.classList.remove('-on');
+  });
+  sideItems.forEach(item => {
+    item.addEventListener('mouseover', function () {
+      firstSideItem.classList.remove('-open');
+      firstSideItem.classList.remove('-active');
+      item.classList.add('-active');
+    });
+    item.addEventListener('mouseleave', function () {
+      firstSideItem.classList.add('-active');
+      if (item != firstSideItem) item.classList.remove('-active');
+    });
+  });
+}; // mobile menu click
+
 
 const mobileMenu = () => {
   navItems.forEach(item => {
@@ -321,6 +357,8 @@ const mobileMenu = () => {
 
   if (iconNav) iconNav.addEventListener("click", openMenu); // mobile
   // if (window.innerWidth < 1248) mobileMenu();
+
+  if (window.innerWidth > 1024) menuHover();
 })(); // resize
 
 

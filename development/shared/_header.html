@@ -1,6 +1,7 @@
 {% set languageNav =  data.languages %}
 {% set reflect = data.page.meta[0].language %}
 
+{% set solutionsTitle = data.languagesTags | findTag('solutions-text', data.content.languageID) %}
 {% set corporateTitle = data.languagesTags | findTag('corporate-text', data.content.languageID) %}
 {% set investorRelationsTitle = data.languagesTags | findTag('investor-relations-text', data.content.languageID) %}
 {% set contactTitle = data.languagesTags | findTag('contact-text', data.content.languageID) %}
@@ -57,17 +58,47 @@
 					{% endif %}
 
 					{% if nav.pageContentName != corporateTitle and nav.pageContentName != investorRelationsTitle and nav.pageContentName != contactTitle %}
-					<div class="header-bottom__nav-item">
+					<div class="header-bottom__nav-item {{'-fs' if nav.pageContentName == solutionsTitle}}" {{'solutions-title' if nav.pageContentName == solutionsTitle}}>
 						<a class="header-bottom__nav-link" href="{{navLink}}" title="{{ nav.pageContentName }}">{{nav.pageContentName}}</a>
 
-						{% if nav.sub and nav.sub != "" %}
-							<div class="header-bottom__sub-container">
-								{% for subTitle in nav.sub %}
-									<div class="header-bottom__sub-item">
-										<a class="header-bottom__sub-link" href="{{subTitle.path}}" title="{{ subTitle.pageContentName }}">{{subTitle.pageContentName}}</a>
+						{% if nav.sub and nav.sub != "" and nav.pageContentName != solutionsTitle %}
+						<div class="header-bottom__sub-container">
+							{% for subItem in nav.sub %}
+								<div class="header-bottom__sub-item">
+									<a class="header-bottom__sub-link" href="{{subItem.path}}" title="{{ subItem.pageContentName }}">{{subItem.pageContentName}}</a>
+								</div>
+							{% endfor %}
+						</div>
+						{% endif %}
+
+						{% if nav.pageContentName == solutionsTitle %}
+						<div class="header-fullscreen" header-fullscreen>
+							<div class="header-fullscreen__container">
+								<div class="header-fullscreen__side-items">
+									{% for sideItem in nav.sub %}
+									<div class="header-fullscreen__side-item {{'-active -open' if loop.index == 1}}" style="top: -{{loop.index}}px;" fs-side-item>
+										<a class="header-fullscreen__side-link" href="{{sideItem.path}}" title="{{ sideItem.pageContentName }}">{{sideItem.pageContentName}}</a>
+										<div class="header-fullscreen__nav-items">
+											{% for navItem in sideItem.sub %}
+											<div class="header-fullscreen__nav-item">
+												<a class="header-fullscreen__nav-title" href="{{navItem.path}}" title="{{ navItem.pageContentName }}">{{navItem.pageContentName}}</a>
+												{% for navSubTitle in navItem.sub %}
+													<a class="header-fullscreen__nav-sub-title" href="{{navSubTitle.path}}" title="{{ navSubTitle.pageContentName }}">{{navSubTitle.pageContentName}}</a>
+												{% endfor %}
+											</div>
+											{% endfor %}
+										</div>
 									</div>
-								{% endfor %}
+									{% endfor %}
+								</div>
+								<div class="header-fullscreen__nav-base"></div>
 							</div>
+							<div class="header-fullscreen__close-wrapper">
+								<div class="header-fullscreen__close-button" fs-close>
+									{{ data.languagesTags | findTag('close-text', data.content.languageID) }}
+								</div>
+							</div>
+						</div>
 						{% endif %}
 					</div>
 					{% endif %}
@@ -103,7 +134,7 @@
 					{% set navLink = nav.redirectUrl %}
 				{% endif %}
 
-				<div class="header-mobile__nav-item" nav-item>
+				<div class="header-mobile__nav-item" mobile-nav-item>
 					<a class="header-mobile__nav-link" href="{{navLink}}" title="{{ nav.pageContentName }}">{{nav.pageContentName}}</a>
 				</div>
 			{% endfor %}

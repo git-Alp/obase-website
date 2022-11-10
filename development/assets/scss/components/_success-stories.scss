@@ -24,7 +24,7 @@
     grid-row-gap: 25px;
     margin-bottom: 50px;
     width: 100%;
-    max-width: 1440px;
+    max-width: 1150px;
 
     @include mq(tablet-wide, min) {
       grid-template-columns: repeat(3,minmax(0,1fr));
