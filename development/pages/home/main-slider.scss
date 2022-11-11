@@ -102,11 +102,11 @@
 			text-align: center;
 			font-family: $GeomanistLight;
 			font-weight: 300;
-			@include font-size(46, 56);			
+			@include font-size(48, 58);			
 
 			@include mq(tablet-small, min) {
 				text-align: left;
-				@include font-size(50, 60);
+				@include font-size(56, 66);
 			}
 
 			@include mq(tablet-wide, min) {
@@ -119,14 +119,10 @@
 			text-align: center;
 			font-family: $GeomanistExtraLight;
 			font-weight: 300;
-			@include font-size(18, 28);
-
-			@include mq(tablet-small, min) {
-				text-align: left;
-				@include font-size(20, 30);
-			}
+			@include font-size(20, 30);
 
 			@include mq(tablet-wide, min) {
+				text-align: left;
 				@include font-size(22, 32);	
 			}
 		}

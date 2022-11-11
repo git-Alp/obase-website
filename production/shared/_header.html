@@ -5,6 +5,7 @@
 {% set corporateTitle = data.languagesTags | findTag('corporate-text', data.content.languageID) %}
 {% set investorRelationsTitle = data.languagesTags | findTag('investor-relations-text', data.content.languageID) %}
 {% set contactTitle = data.languagesTags | findTag('contact-text', data.content.languageID) %}
+{% set backButton = data.languagesTags | findTag('back-text', data.content.languageID) %}
 
 <header class="header" header>
 	<div class="header-top">
@@ -134,15 +135,59 @@
 					{% set navLink = nav.redirectUrl %}
 				{% endif %}
 
+				{% if nav.sub and nav.sub != "" %}
+				<div class="header-mobile__nav-item -has" mobile-nav-item>
+					<a class="header-mobile__nav-link" href="{{navLink}}" title="{{ nav.pageContentName }}">{{nav.pageContentName}}</a>
+					<div class="header-mobile__nav-arrow" nav-link></div>
+					<div class="header-mobile__sub-container" first-sub-container>
+						<div class="header-mobile__sub-item -back" nav-back>{{backButton}}</div>
+						{% for firstSubItem in nav.sub %}
+							{% if firstSubItem.sub and firstSubItem.sub != "" %}
+							<div class="header-mobile__sub-item -has" first-sub-item>
+								<a class="header-mobile__sub-link" href="{{firstSubItem.path}}" title="{{ firstSubItem.pageContentName }}">{{firstSubItem.pageContentName}}</a>
+								<div class="header-mobile__nav-arrow" sub-link></div>
+								<div class="header-mobile__sub-container" second-sub-container>
+									<div class="header-mobile__sub-item -back" nav-back>{{backButton}}</div>
+										{% for secondSubItem in firstSubItem.sub %}
+											{% if secondSubItem.sub and secondSubItem.sub != "" %}
+											<div class="header-mobile__sub-item -has" second-sub-item>
+												<a class="header-mobile__sub-link" href="{{secondSubItem.path}}" title="{{ secondSubItem.pageContentName }}">{{secondSubItem.pageContentName}}</a>
+												<div class="header-mobile__nav-arrow" sub-link></div>
+												<div class="header-mobile__sub-container" third-sub-container>
+													<div class="header-mobile__sub-item -back" nav-back>{{backButton}}</div>
+													{% for thirdSubItem in secondSubItem.sub %}
+													<div class="header-mobile__sub-item">
+														<a class="header-mobile__sub-link" href="{{thirdSubItem.path}}" title="{{ thirdSubItem.pageContentName }}">{{thirdSubItem.pageContentName}}</a>
+													</div>
+													{% endfor %}
+												</div>
+											</div>
+											{% else %}
+											<div class="header-mobile__sub-item">
+												<a class="header-mobile__sub-link" href="{{secondSubItem.path}}" title="{{ secondSubItem.pageContentName }}">{{secondSubItem.pageContentName}}</a>
+											</div>
+											{% endif %}
+										{% endfor %}
+									</div>
+							</div>
+							{% else %}
+							<div class="header-mobile__sub-item">
+								<a class="header-mobile__sub-link" href="{{firstSubItem.path}}" title="{{ firstSubItem.pageContentName }}">{{firstSubItem.pageContentName}}</a>
+							</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+				{% else %}
 				<div class="header-mobile__nav-item" mobile-nav-item>
 					<a class="header-mobile__nav-link" href="{{navLink}}" title="{{ nav.pageContentName }}">{{nav.pageContentName}}</a>
 				</div>
+				{% endif %}
 			{% endfor %}
 			<div class="header-mobile__nav-item">
 				<a class="header-mobile__nav-link -language" href="/en">EN</a>
 			</div>
 		</div>
 	</div>
-
 
 </header>

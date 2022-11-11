@@ -272,78 +272,81 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 "use strict";
 
-let headerElem = document.querySelector('[header]');
-let iconNav = document.querySelector('[menu="toggle"]');
-let container = document.querySelector('[mobile-container]');
-let navItems = document.querySelectorAll('[nav-item]');
-let navSubItems = document.querySelectorAll('[nav-sub-item]');
-let headerFullscreen = document.querySelector('[header-fullscreen]');
-let sideItems = document.querySelectorAll('[fs-side-item]');
-let firstSideItem = document.querySelector('.header-fullscreen__side-item.-open');
-let solutions = document.querySelector('[solutions-title]');
-let closeButton = document.querySelector('[fs-close]');
-let active = "-active";
-let hover = "-hover";
+const headerFullscreen = document.querySelector('[header-fullscreen]');
+const sideItems = document.querySelectorAll('[fs-side-item]');
+const firstSideItem = document.querySelector('.header-fullscreen__side-item.-open');
+const solutionsTitle = document.querySelector('[solutions-title]');
+const closeButton = document.querySelector('[fs-close]');
+const iconNav = document.querySelector('[menu="toggle"]');
+const container = document.querySelector('[mobile-container]');
+const navItems = document.querySelectorAll('[mobile-nav-item]');
+const firstSubItems = document.querySelectorAll('[first-sub-item]');
+const secındSubItems = document.querySelectorAll('[second-sub-item]');
+const firstSubContainers = document.querySelectorAll('[first-sub-container]');
+const secondSubContainers = document.querySelectorAll('[second-sub-container]');
+const thirdSubContainers = document.querySelectorAll('[third-sub-container]');
 
 const menuHover = () => {
-  headerFullscreen.addEventListener('mouseover', function () {
-    document.body.classList.add('-fixed');
-  });
-  solutions.addEventListener('mouseover', function () {
-    solutions.classList.add('-on');
-  });
-  solutions.addEventListener('mouseleave', function () {
-    solutions.classList.remove('-on');
-  });
-  headerFullscreen.addEventListener('mouseleave', function () {
-    solutions.classList.remove('-on');
+  closeButton.addEventListener('click', () => solutionsTitle.classList.remove('-on'));
+  headerFullscreen.addEventListener('mouseover', () => document.body.classList.add('-fixed'));
+  solutionsTitle.addEventListener('mouseover', () => solutionsTitle.classList.add('-on'));
+  solutionsTitle.addEventListener('mouseleave', () => solutionsTitle.classList.remove('-on'));
+  headerFullscreen.addEventListener('mouseleave', () => {
+    solutionsTitle.classList.remove('-on');
     document.body.classList.remove('-fixed');
   });
-  closeButton.addEventListener('click', function () {
-    solutions.classList.remove('-on');
-  });
   sideItems.forEach(item => {
-    item.addEventListener('mouseover', function () {
+    item.addEventListener('mouseover', () => {
       firstSideItem.classList.remove('-open');
       firstSideItem.classList.remove('-active');
       item.classList.add('-active');
     });
-    item.addEventListener('mouseleave', function () {
+    item.addEventListener('mouseleave', () => {
       firstSideItem.classList.add('-active');
       if (item != firstSideItem) item.classList.remove('-active');
     });
   });
-}; // mobile menu click
-
+};
 
 const mobileMenu = () => {
   navItems.forEach(item => {
-    let navLink = item.querySelector('[nav-link]');
-    navLink.addEventListener('click', function () {
-      container.classList.add('-move');
-      item.classList.add(active);
-    });
+    const navLink = item.querySelector('[nav-link]');
+    const navBack = item.querySelector('[nav-back]');
+    const firstSubContainer = item.querySelector('[first-sub-container]');
+
+    if (navLink) {
+      navLink.addEventListener('click', () => firstSubContainer.classList.add('-on'));
+    }
+
+    if (navBack) {
+      navBack.addEventListener('click', () => firstSubContainer.classList.remove('-on'));
+    }
   });
-  let navBack = document.querySelectorAll('[nav-back]');
-  navBack.forEach(button => {
-    button.addEventListener('click', function () {
-      container.classList.remove('-move');
-      navItems.forEach(item => item.classList.remove(active));
-    });
+  firstSubItems.forEach(item => {
+    const subLink = item.querySelector('[sub-link]');
+    const navBack = item.querySelector('[nav-back]');
+    const secondSubContainer = item.querySelector('[second-sub-container]');
+
+    if (subLink) {
+      subLink.addEventListener('click', () => secondSubContainer.classList.add('-on'));
+    }
+
+    if (navBack) {
+      navBack.addEventListener('click', () => secondSubContainer.classList.remove('-on'));
+    }
   });
-  navSubItems.forEach(item => {
-    let navLink = item.querySelector('[nav-sub-link]');
-    navLink.addEventListener('click', function () {
-      container.classList.add('-move-sub');
-      item.classList.add(active);
-    });
-  });
-  let navSubBack = document.querySelectorAll('[nav-sub-back]');
-  navSubBack.forEach(button => {
-    button.addEventListener('click', function () {
-      container.classList.remove('-move-sub');
-      navSubItems.forEach(item => item.classList.remove(active));
-    });
+  secındSubItems.forEach(item => {
+    const subLink = item.querySelector('[sub-link]');
+    const navBack = item.querySelector('[nav-back]');
+    const thirdSubContainer = item.querySelector('[third-sub-container]');
+
+    if (subLink) {
+      subLink.addEventListener('click', () => thirdSubContainer.classList.add('-on'));
+    }
+
+    if (navBack) {
+      navBack.addEventListener('click', () => thirdSubContainer.classList.remove('-on'));
+    }
   });
 };
 
@@ -352,12 +355,19 @@ const mobileMenu = () => {
     iconNav.classList.toggle('-on');
     container.classList.toggle('-on');
     document.body.classList.toggle('-fixed');
-  }; // open menu
+    firstSubContainers.forEach(item => {
+      if (item.classList.contains('-on')) item.classList.remove('-on');
+    });
+    secondSubContainers.forEach(item => {
+      if (item.classList.contains('-on')) item.classList.remove('-on');
+    });
+    thirdSubContainers.forEach(item => {
+      if (item.classList.contains('-on')) item.classList.remove('-on');
+    });
+  };
 
-
-  if (iconNav) iconNav.addEventListener("click", openMenu); // mobile
-  // if (window.innerWidth < 1248) mobileMenu();
-
+  if (iconNav) iconNav.addEventListener("click", openMenu);
+  if (window.innerWidth < 1024) mobileMenu();
   if (window.innerWidth > 1024) menuHover();
 })(); // resize
 
@@ -367,7 +377,14 @@ window.addEventListener('resize', function () {
     iconNav.classList.remove('-on');
     container.classList.remove('-on');
     document.body.classList.remove('-fixed');
-    navItems.forEach(item => item.classList.remove(active));
-    navSubItems.forEach(item => item.classList.remove(active));
+    firstSubContainers.forEach(item => {
+      if (item.classList.contains('-on')) item.classList.remove('-on');
+    });
+    secondSubContainers.forEach(item => {
+      if (item.classList.contains('-on')) item.classList.remove('-on');
+    });
+    thirdSubContainers.forEach(item => {
+      if (item.classList.contains('-on')) item.classList.remove('-on');
+    });
   }
 });

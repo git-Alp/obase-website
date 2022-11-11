@@ -111,6 +111,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     margin-right: 15px;
+    width: 100%;
   }
 
   &__title {
@@ -138,7 +139,7 @@
   }
 
   &__link {
-    display: contents;
+    // display: contents;
 
     img {
       width: 45px;

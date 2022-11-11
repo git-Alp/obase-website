@@ -18,6 +18,10 @@
   }
 
   @include mq(desktop-small, min) {
+    padding: 100px 150px 70px 150px;
+  }
+
+  @include mq(desktop-wide, min) {
     padding: 100px 220px 70px 220px;
   }
 
@@ -27,7 +31,7 @@
     grid-column-gap: 50px;
     grid-row-gap: 50px;
     width: 100%;
-    max-width: 1440px;
+    max-width: 1200px;
 
     @include mq(tablet-small, min) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
