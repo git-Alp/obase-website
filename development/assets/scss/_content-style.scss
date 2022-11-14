@@ -95,67 +95,6 @@ img{
 	height: auto;
 }
 
-ul, ol {
-	margin: 0;
-	padding: 0;
-	max-width: 100%;
-	list-style: none;
-
-	li {
-		margin: 0;
-		padding: 0;
-	}
-}
-
-ul:not(.breadcrumb){
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;
-
-	margin: 0 0 15px 0;
-
-	li{
-		position: relative;
-
-		padding: 0 0 0 24px;
-
-		color: $outer-space;
-		@include font-size(15,24);
-		font-weight: 400;
-		font-style: normal;
-
-		text-align: left;
-
-		@include mq(tablet-wide, min) {
-			margin: 0 0 2px 0;
-		}
-
-		&:last-child{
-			margin: 0;
-		}
-
-		&:before{
-			content: "";
-
-			position: absolute;
-			top: 10px;
-			left: 10px;
-
-			display: flex;
-			flex-direction: row;
-			justify-content: flex-start;
-			align-items: flex-start;
-
-			width: 4px;
-			height: 4px;
-
-			border-radius: 50%;
-			background-color: $outer-space;
-		}
-	}
-}
-
 .button-type {
 	flex-shrink: 0;
 

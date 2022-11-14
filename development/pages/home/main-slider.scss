@@ -130,6 +130,7 @@
 		&__button {
 			margin-top: 10px;
 			padding: 20px 50px 15px 50px;
+			width: 100%;
 			background-color: $white;
 			color: $cello;
 			@include font-size(15, 15);
@@ -137,6 +138,7 @@
 			@include mq(tablet-small, min) {
 				margin-top: 20px;
 				padding: 25px 50px 20px 50px;
+				width: auto;
 			}
 
 			@include mq(desktop-small, min) {

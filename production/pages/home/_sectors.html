@@ -16,7 +16,7 @@
         </div>
         <h3 class="sectors__title">{{item.name}}</h3>
         <p class="sectors__text">{{sectorText}}</p>
-        <a class="sectors__detail-link">
+        <a href="{{item.path}}" class="sectors__detail-link">
           <span>{{ data.languagesTags | findTag('detail-information-text', data.content.languageID) }}</span>
           <img lazy="/assets/svg/blue-arrow-icon.svg" width="26" height="13" alt="Detail Information">
         </a>

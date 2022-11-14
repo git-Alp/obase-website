@@ -13,14 +13,14 @@
     {% if loop.index < 4 %}
       <div class="solutions__item">
         <div class="solutions__image">
-          <img lazy="{{solutionImage}}" alt="{{item.name}}">
+          <img lazy="{{solutionImage}}" width="380" height="360" alt="{{item.name}}">
         </div>
         <div class="solutions__wrapper">
           <div class="solutions__content">
             <h3 class="solutions__title">{{item.name}}</h3>
             <p class="solutions__text">{{solutionText}}</p>
           </div>
-          <a class="solutions__link">
+          <a href="{{item.path}}" class="solutions__link">
             <img lazy="/assets/svg/white-arrow-icon.svg" width="45" height="45" alt="Detail Information">
           </a>
         </div>

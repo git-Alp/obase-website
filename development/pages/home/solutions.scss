@@ -139,8 +139,6 @@
   }
 
   &__link {
-    // display: contents;
-
     img {
       width: 45px;
       height: 45px;
@@ -160,6 +158,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 25px;
     width: 100%;
     height: 90px;
     background-color: $mystic;
@@ -167,6 +166,7 @@
     &__link {
       position: relative;
       padding: 25px 44px 20px 43px;
+      width: 100%;
       background-color: $white;
       color: $cello;
 
@@ -175,6 +175,10 @@
       font-family: $GeomanistBold;
       font-weight: 700;
       @include font-size(15, 15);
+
+      @include mq(tablet-small, min) {
+        width: auto;
+      }
 
       @include mq(tablet-wide, min) {
         top: -45px;

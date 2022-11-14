@@ -132,10 +132,10 @@
 }
 .reach-us__container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 25px;
+  padding: 25px 25px 0 25px;
   width: 100%;
   background-color: #EBF1F3;
 }
@@ -152,6 +152,7 @@
 .reach-us__button {
   margin: 20px;
   padding: 16px 40px 13px 40px;
+  width: 100%;
   color: #fff;
   background: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%);
   font-size: 13px;
@@ -522,8 +523,13 @@
   }
 }
 @media only screen and (min-width: 640px) {
+  .reach-us__container {
+    flex-direction: row;
+    padding: 0 25px;
+  }
   .reach-us__button {
     margin: 20px 30px;
+    width: auto;
   }
   .technology-background__top {
     height: 310px;
@@ -709,6 +715,7 @@
 .main-slider .slider__button {
   margin-top: 10px;
   padding: 20px 50px 15px 50px;
+  width: 100%;
   background-color: #fff;
   color: #223963;
   font-size: 15px;
@@ -765,6 +772,7 @@
   .main-slider .slider__button {
     margin-top: 20px;
     padding: 25px 50px 20px 50px;
+    width: auto;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -1142,7 +1150,7 @@
   border-bottom: 1px solid #EBF1F3;
 }
 .sectors__icon {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   width: 100px;
   height: 100px;
 }
@@ -1205,6 +1213,9 @@
   }
   .sectors__item:last-child {
     border-left: 1px solid #EBF1F3;
+  }
+  .sectors__icon {
+    margin-bottom: 50px;
   }
   .sectors__text {
     margin-bottom: 40px;
@@ -1392,6 +1403,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 25px;
   width: 100%;
   height: 90px;
   background-color: #EBF1F3;
@@ -1399,6 +1411,7 @@
 .solutions-all__link {
   position: relative;
   padding: 25px 44px 20px 43px;
+  width: 100%;
   background-color: #fff;
   color: #223963;
   text-transform: uppercase;
@@ -1412,6 +1425,11 @@
 }
 .solutions-all__link:hover {
   color: #48ABDF;
+}
+@media only screen and (min-width: 640px) {
+  .solutions-all__link {
+    width: auto;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .solutions__container {

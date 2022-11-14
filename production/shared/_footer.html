@@ -73,7 +73,7 @@
 					{{ data.languagesTags | findTag('footer-kvk-text', data.content.languageID) }}
 				</a>
 		</div>
-		<a href="https://www.gricreative.com/" class="footer-bottom__gricreative" title="{{data.languagesTags | findTag('gricreative-name', data.content.languageID)}}" target="_blank" rel="noreferrer">
+		<a href="{{data.languagesTags | findTag('gricreative-url', data.content.languageID)}}" class="footer-bottom__gricreative" title="{{data.languagesTags | findTag('gricreative-name', data.content.languageID)}}" target="_blank" rel="noreferrer">
 			<img lazy="/assets/svg/logotype-gricreative.svg" width="73" height="14" alt="Gricreative" >
 		</a>
 	</div>

@@ -6,12 +6,17 @@
 
   &__container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 25px;
+    padding: 25px 25px 0 25px;
     width: 100%;
     background-color: $mystic;
+
+    @include mq(tablet-small, min) {
+      flex-direction: row;
+      padding: 0 25px;
+    }
   }
 
   &__content {
@@ -25,12 +30,14 @@
   &__button {
     margin: 20px;
     padding: 16px 40px 13px 40px;
+    width: 100%;
     color: $white;
     background: linear-gradient(90deg, #FF7249 0%, #FBB03B 97.4%);
     @include font-size(13, 13);
 
     @include mq(tablet-small, min) {
       margin: 20px 30px;
+      width: auto;
     }
 
     &:hover {

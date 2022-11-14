@@ -54,9 +54,13 @@
   }
 
   &__icon {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     width: 100px;
     height: 100px;
+
+    @include mq(tablet-wide, min) {
+      margin-bottom: 50px;
+    }
   }
 
   &__title {
